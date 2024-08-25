@@ -1,773 +1,198 @@
-@charset "UTF-8";
-/* 初期設定 */
-html{
-    height: 100vh;
-    overflow: hidden;
-    cursor: none;
-}
-body{
-    height: 100vh;
-    overflow: hidden;
-}
-
-
-/* クラス付与 */
-.fadeOut{
-    animation : fadeOut 3s forwards;
-}
-@keyframes fadeOut {
-    0%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-        display: none;
-    }
-}
-
-
-
-/* カーソル */
-.cursor {
-    position: fixed;
-    top: -10px;
-    left: -10px;
-    width: 20px;
-    height: 20px;
-    background: #d4c520;
-    opacity: 0.9;
-    border-radius: 50%;
-    z-index: 100003;
-    pointer-events: none;
-    display: none;
-}
-.pushText{
-    opacity: 0;
-    text-align: center;
-    line-height: 60px;
-    display: none;
-}
-.scrollText{
-    opacity: 0;
-    text-align: center;
-    line-height: 60px;
-    display: none;
-}
-.cursorSlow{
-    position: fixed;
-    top: -15px;
-    left: -15px;
-    width: 30px;
-    height: 30px;
-    background: #d6ca45;
-    opacity: 0.9;
-    border-radius: 50%;
-    z-index: 100002;
-    pointer-events: none;
-    display: none;
-}
-.cursorSlowSlow{
-    position: fixed;
-    top: -20px;
-    left: -20px;
-    width: 40px;
-    height: 40px;
-    background: #d4cb6c;
-    opacity: 0.9;
-    border-radius: 50%;
-    z-index: 100001;
-    pointer-events: none;
-    display: none;
-}
-
-
-
-/* ロード画面 */
-.load{
-    overflow: hidden;
-    z-index: 10000;
-}
-.loadText{
-    position: absolute;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%,-50%);
-    height: 200px;
-    width: 200px;
-    color: #ffffff;
-    z-index: 10002;
-}
-.loadText span{
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
-    text-align: center;
-    transform-origin: center;
-}
-.loadText span:nth-child(1) {
-    animation: loadText1 1.5s ease infinite;
-}
-@keyframes loadText1 {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-.loadText span:nth-child(2) {
-    animation: loadText2 1.5s ease infinite;
-}
-@keyframes loadText2 {
-    0%{
-        transform: rotate(36deg);
-    }
-    100%{
-        transform: rotate(396deg);
-    }
-}
-.loadText span:nth-child(3) {
-  animation: loadText3 1.5s ease infinite;
-}
-@keyframes loadText3 {
-    0%{
-        transform: rotate(72deg);
-    }
-    100%{
-        transform: rotate(432deg);
-    }
-}
-.loadText span:nth-child(4) {
-  animation: loadText4 1.5s ease infinite;
-}
-@keyframes loadText4 {
-    0%{
-        transform: rotate(108deg);
-    }
-    100%{
-        transform: rotate(468deg);
-    }
-}
-.loadText span:nth-child(5) {
-  animation: loadText5 1.5s ease infinite;
-}
-@keyframes loadText5 {
-    0%{
-        transform: rotate(144deg);
-    }
-    100%{
-        transform: rotate(504deg); 
-    }
-}
-.loadText span:nth-child(6) {
-  animation: loadText6 1.5s ease infinite;
-}
-@keyframes loadText6 {
-    0%{
-        transform: rotate(180deg);
-    }
-    100%{
-        transform: rotate(540deg); 
-    }
-}
-.loadText span:nth-child(7) {
-  animation: loadText7 1.5s ease infinite;
-}
-@keyframes loadText7 {
-    0%{
-        transform: rotateZ(216deg);
-    }
-    100%{
-        transform: rotateZ(576deg);
-    }
-}
-.loadText span:nth-child(8) {
-  animation: loadText8 1.5s ease infinite;
-}
-@keyframes loadText8 {
-    0%{
-        transform: rotate(252deg);
-    }
-    100%{
-        transform: rotate(612deg); 
-    }
-}
-.loadText span:nth-child(9) {
-  animation: loadText9 1.5s ease infinite;
-}
-@keyframes loadText9 {
-    0%{
-        transform: rotate(288deg);
-    }
-    100%{
-        transform: rotate(648deg); 
-    }
-}
-.loadText span:nth-child(10) {
-  animation: loadText10 1.5s ease infinite;
-}
-@keyframes loadText10 {
-    0%{
-        transform: rotate(324deg);
-    }
-    100%{
-        transform: rotate(684deg); 
-    }
-}
-.loadLeft{
-    background-color: #d40000;
-    height: 100vh;
-    width: 51%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10001;
-}
-.loadRight{
-    background-color: #d40000;
-    height: 100vh;
-    width: 51%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10001;
-}
-
-
-
-/* ナビゲーション */
-.nav{
-    position: fixed;
-    height: 10vh;
-    width: 100vw;
-    background-color: rgba(0,0,0,0.8);
-    display: flex;
-    justify-content: center;
-    z-index: 1001;
-}
-.navList{
-    margin: 1vh 10px;
-    color: #ffffff;
-    font-family: serif;
-    line-height: 8vh;
-    width: 150px;
-    text-align: center;
-    position: relative;
-    border-radius: 10px;
-    white-space: nowrap;
-    transition: all 0.5s;
-}
-.navList span:nth-child(2n){
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: #000000;
-    opacity: 0;
-}
-.navList:hover{
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-
-
-/* ホーム画面 */
-.home{
-    background: linear-gradient(to bottom, rgba(53, 13, 133, 1), rgba(53, 13, 133, 0.3));
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
-}
-.stars{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; 
-    height: 100vh; 
-}
-.star{
-    position: absolute;
-    display: block;
-    background-color: #ffffff; 
-    border-radius: 50%;
-    box-shadow: 0 0 4px 2px rgba(#fff, 0.2); 
-    opacity: 0;
-    animation: starAnimate 5s infinite;
-}
-@keyframes starAnimate{
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-}
-.flowStar{
-    color: #ffe900;
-    position: absolute;
-    display: block;
-    border-radius: 50%;
-    box-shadow: 0 0 4px 2px rgba(#fff, 0.2); 
-    opacity: 0;
-    animation: flowStarAnimate 4s infinite linear;
-}
-@keyframes flowStarAnimate{
-    0% {
-        opacity: 0.5;
-        transform: translate(0,0);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-        transform: translate(-4500%,7500%);
-        box-shadow: 0 0 200px rgba(#ffe900, 1); 
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-        transform: translate(-9000%,15000%);
-    }
-}
-.fa-moon{
-    font-size: 320px;
-    color: #ffe900;
-    text-shadow: 0 0 50px #ffe900;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-80%,-60%);
-}
-.portfolio{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%,-300%);
-    font-family: 'Sacramento', cursive;
-    font-size: 30px;
-    font-weight: 700;
-    color: #ffffff;
-    opacity: 0;
-}
-.myName{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-family: 'Sacramento', cursive;
-    font-size: 50px;
-    font-weight: 700;
-    color: #ffffff;
-    opacity: 0;
-    white-space: nowrap
-}
-
-
-
-/* 〇〇画面共通構成 */
-.screenText{
-    height: 80vh;
-    width: calc(50vw - 30px-10vw);
-    padding: 5vh 5vw;
-    overflow-wrap:break-word;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-}
-.screenText::-webkit-scrollbar{
-    width: 15px;
-    background-color: #f0edc5; 
-}
-.screenText::-webkit-scrollbar-thumb{
-    background: #ebab52;
-    width: 6px;
-    border-radius: 15px;
-}
-.scroll{
-    display: none;
-}
-.screenText h2{
-    text-align: center;
-    font-size: 40px;
-    font-weight: 700;
-    font-family: "Yusei Magic", sans-serif;
-    margin-bottom: 30px;
-}
-.screenText h3{
-    font-size: 20px;
-    font-weight: 700;
-    color: #f2b552;
-    font-family: "Zen Maru Gothic", serif;
-    margin: 15px 0 5px;
-}
-.screenText p{
-    font-family: "Kaisei Opti", serif;
-}
-
-
-
-/* プロフィール画面 */
-.profile{
-    background: linear-gradient(to bottom, rgba(91, 187, 235, 1) 30%, rgba(91, 187, 235, 0.3));
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
-    display: none;
-}
-.fa-sun{
-    position: absolute;
-    top: 12vh;
-    left: 1vw;
-    height: 200px;
-    width: 200px;
-    font-size: 200px;
-    background: radial-gradient(#e53935,#ffd600);
-	-webkit-background-clip: text;
-    background-clip: text;
-	-webkit-text-fill-color: transparent;
-    animation: sunAnimate 20s infinite linear;
-}
-@keyframes sunAnimate{
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-.clouds{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; 
-    height: 100vh;
-}
-.cloud{
-    position: absolute;
-    display: block;
-    box-shadow: 0 0 4px 2px rgba(#fff, 0.2); 
-    color: #ffffff;
-    opacity: 0;
-    animation: cloudAnimate 20s infinite linear;
-}
-@keyframes cloudAnimate{
-    0% {
-        opacity: 0;
-        transform: translate(0,0);
-    }
-    10%{
-        opacity: 0.8;
-        transform: translate(-20%,0);
-    }
-    50% {
-        opacity: 0.8;
-        transform: scale(1.1);
-        transform: translate(-100%,0);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-        transform: translate(-200%,0);
-    }
-}
-.profileTextScreen{
-    position: absolute;
-    top: 15vh;
-    left: 50vw;
-    background-color: #ede79a;
-    height: 80vh;
-    width: calc(50vw - 30px);
-    border-radius: 30px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
-.profileText h2{
-    color: #5bbbeb;
-}
-.profileText p{
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom:10px;
-}
-.likings{
-    margin-top:5px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-}
-.liking{
-    height: 80px;
-    width: 80px;
-    margin: 0 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    border: solid 2px #000000;
-}
-.liking i{
-    font-size: 30px;
-    padding: 10px 0;
-}
-
-
-
-/* スキル画面 */
-.skils{
-    background: linear-gradient(to bottom, rgba(30, 227, 36, 1) 30%, rgba(30, 227, 36, 0.3) 100%);
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
-    display: none;
-}
-.soaps{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-}
-.soap{
-    position: absolute;
-    display: block;
-    background: radial-gradient(rgba(255, 255, 255, 0.3) 30%, rgba(175, 225, 246, 0.5) 100%);
-    border-radius: 50% 46% 48% 44%;
-    overflow: hidden;
-    animation: soapsAnimate 15s infinite linear;
-}
-@keyframes soapsAnimate {
-    0% {
-        opacity: 1;
-        transform: translate(50px,100vh);
-    }
-    50% {
-        transform: translateX(-50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(50px,-100vh);
-    }
-}
-.soap::before{
-	content: "";
-	position: absolute;
-	right: -10%;
-	bottom: -10%;
-	width: 60%;
-	height: 60%;
-	border-radius: 60% 0;
-	background: radial-gradient(at 0 0, rgba(0, 130, 255, 0.3) 40%, rgba(255, 154, 204, 0.7) 50%);
-	transform-origin: 0 0;
-	animation: soapAnimate 15s 0s ease-in-out infinite;
-	filter: blur(15px);
-}
-.soap::after{
-	content: "";
-	position: absolute;
-	left: -10%;
-	top: -10%;
-	width: 60%;
-	height: 60%;
-	border-radius: 20% 0;
-	background: radial-gradient(at 100% 100%, rgba(255, 255, 100, 0.5) 40%, rgba(120, 255, 140, 0.7) 60%);
-	transform-origin: 100% 100%;
-	animation: soapAnimate 6s 0s ease-in-out infinite;
-	filter: blur(15px);
-}
-@keyframes soapAnimate{
-	0%{
-        transform: rotate(0);
-    }
-	50%{
-        transform: rotate(160deg);
-    }
-}
-.skilsTextScreen{
-    position: absolute;
-    top: 15vh;
-    right: 50vw;
-    background-color: #ede79a;
-    height: 80vh;
-    width: calc(50vw - 30px);
-    border-radius: 30px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
-.skilsText h2{
-    color: #5beb7a;
-}
-.language{
-    color: #000000;
-    font-family: 'Open Sans', sans-serif;
-    margin-bottom: 5px;
-}
-.bar{
-    position: relative;
-    height: 30px;
-    background-color: #ffffff;
-    margin-bottom:10px;
-}
-.graph{
-    height: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 0 4px 4px 0;
-}
-.html{
-    background: linear-gradient(to bottom, rgba(230, 76, 24, 1), rgba(230, 76, 24, 0.7));
-    width: 75%;
-}
-.css{
-    background: linear-gradient(to bottom, rgba(21, 114, 182, 1), rgba(21, 114, 182, 0.7));
-    width: 75%;
-}
-.javascript{
-    background: linear-gradient(to bottom, rgb(214, 185, 54, 1), rgba(214, 185, 54, 0.7));
-    width: 70%;
-}
-.java{
-    background: linear-gradient(to bottom, rgb(67, 160, 71, 1), rgb(67, 160, 71, 0.7));
-    width: 55%;
-}
-.kotlin{
-    background: linear-gradient(to bottom, rgb(192, 25, 229, 1), rgb(192, 25, 229, 0.7));
-    width: 45%;
-}
-.php{
-    background: linear-gradient(to bottom, rgb(98, 128, 182, 1), rgb(98, 128, 182, 0.7));
-    width: 25%;
-}
-.vue{
-    background: linear-gradient(to bottom, rgb(65, 184, 131, 1), rgb(65, 184, 131, 0.5));
-    width: 25%;
-}
-.percent{
-    color: #ffffff;
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translate(0,-50%);
-    font-family: 'Open Sans', sans-serif;
-}
-.learnPercentList{
-    margin: 30px 10% 0;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.learnPercent{
-    color: #000000;
-    opacity: 0.8;
-    font-size: 15px;
-    width: 50%;
-}
-
-
-
-/* レスポンシブ対応（タブレット） */
-@media screen and (max-width: 959px) {
-    .fa-sun{
-        top: 10vh;
-        left: 0;
-        transform: translate(-50%,-50%)
-    }
-    .profileTextScreen, .skilsTextScreen{
-        left: 10vw;
-        width: 80vw;
-    }
-    .learnPercent{
-        width: 100%;
-    }
-}
-
-
-
-/* レスポンシブ対応（スマホ） */
-@media screen and (max-width: 480px) {
-    .fa-moon{
-        text-shadow: 0 0 40px #ffe900;
-    }
-    .portfolio{
-        font-size: 30px;
-    }
-	.myName{
-        font-size: 40px;
-        transform: translateX(-51%);
-    }
-    .profileTextScreen{
-        height: 70vh;
-    }
-    .skilsTextScreen{
-        height: 70vh;
-    }
-    .screenText::-webkit-scrollbar{
-        width: 0px;
-    }
-    .screenText::-webkit-scrollbar-thumb{
-        width: 0px;
-    }
-    .screenText{
-        height: 70vh;
-    }
-    .scroll{
-        display: block;
-        font-size: 15px;
-        color: #808080;
-        position: absolute;
-        bottom: 50px;
-        right: 20px;
-    }
-    .scrollBar{
-        content: "";
-        position: absolute;
-        right: 37px;
-        width: 3px;
-        height: 30px;
-        background-color: #808080;
-        animation: scrollBarAnimation 2s ease-in-out infinite;
-        opacity:0;
-    }
-    @keyframes scrollBarAnimation{
-        0%{
-          height:0;
-          bottom: 30px;
-          opacity: 0;
-        }
-        30%{
-          height:30px;
-          opacity: 1;
-        }
-        100%{
-          height:0;
-          bottom: 0px;
-          opacity: 0;
-        }
-      }
-    .fa-sun{
-        top: 10vh;
-        left: 0;
-        transform: translate(-50%,-50%)
-    }
-    .profileTextScreen, .skilsTextScreen{
-        left: 10vw;
-        width: 80vw;
-    }
-    .learnPercent{
-        width: 100%;
-    }
-    .learnPercentList{
-        margin: 30px 10% 20px;
-    }
-}
+<!DOCTYPE html>
+<html lang="ja" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ</title>
+    <script src="https://kit.fontawesome.com/9ec583985e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js" defer></script>
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Yusei+Magic&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=M+PLUS+Rounded+1c&family=Yusei+Magic&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- カーソル -->
+    <div class="cursor" id="cursor">
+        <p class="pushText" id="pushText">PUSH</p>
+        <p class="scrollText" id="scrollText">SCROLL</p>
+    </div>
+    <div class="cursorSlow" id="cursorSlow"></div>
+    <div class="cursorSlowSlow" id="cursorSlowSlow"></div>
+    <!-- ロード画面 -->
+    <div class="load">
+        <div class="loadText" id="loadText">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+        <div class="loadLeft" id="loadLeft"></div>
+        <div class="loadRight" id="loadRight"></div>
+    </div>
+    <!-- ナビゲーション -->
+    <div class="nav">
+        <p class="navList navHome" id="navHome">
+            <span id="navHomeEn">
+                HOME
+            </span>
+            <span id="navHomeJa">
+                ホーム
+            </span>
+        </p>
+        <p class="navList navprofile" id="navprofile">
+            <span id="navprofileEn">
+                PROFILE
+            </span>
+            <span id="navprofileJa">
+                プロフィール
+            </span>
+        </p>
+        <p class="navList navskills" id="navskills">
+            <span id="navskillsEn">
+                SKILLS
+            </span>
+            <span id="navskillsJa">
+                スキル
+            </span>
+        </p>
+    </div>
+    <!-- ホーム画面 -->
+    <div class="home" id="home">
+        <div class="stars" id="stars"></div>
+        <div class="fa-solid fa-moon"></div>
+        <p class="portfolio" id="portfolio">portfolio</p>
+        <p class="myName" id="myName">Yuga Yamamoto</p>
+    </div>
+    <!-- プロフィール画面 -->
+    <div class="profile" id="profile">
+        <i class="fa-solid fa-sun"></i>
+        <div class="clouds" id="clouds"></div>
+        <div class="profileTextScreen" id="profileTextScreen">
+            <div class="scroll">Scroll</div>
+            <div class="scrollBar"></div>
+            <div class="profileText screenText">
+                <h2>プロフィール</h2>
+                <h3>名前</h3>
+                <p>山本 悠雅</p>
+                <h3>年齢</h3>
+                <p>23歳</p>
+                <h3>出身</h3>
+                <p>愛知県</p>
+                <h3>現住地</h3>
+                <p>東京都大田区</p>
+                <h3>卒業大学</h3>
+                <p>大同大学</p>
+                <h3>趣味</h3>
+                <div class="likings">
+                    <div class="liking">
+                        <i class="fa-solid fa-gamepad"></i><br>
+                        <span>ゲーム</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-music"></i><br>
+                        <span>音楽鑑賞</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span>YouTube</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-building-columns"></i><br>
+                        <span>美術館</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-microphone-lines"></i><br>
+                        <span>カラオケ</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-kitchen-set"></i><br>
+                        <span>料理</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-cat"></i><br>
+                        <span>猫</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-shirt"></i><br>
+                        <span>服</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- スキル画面 -->
+    <div class="skills" id="skills">
+        <div class="soaps" id="soaps"></div>
+        <div class="skillsTextScreen" id="skillsTextScreen">
+            <div class="skillsText screenText">
+                <div class="scroll">Scroll</div>
+                <div class="scrollBar"></div>
+                <h2>スキル</h2>
+                <h3>フロントエンド</h3>
+                <p class="language">HTML</p>
+                <div class="bar">
+                    <div class="graph html">
+                        <p class="percent">75</p>
+                    </div>
+                </div>
+                <p class="language">CSS</p>
+                <div class="bar">
+                    <div class="graph css">
+                        <p class="percent">75</p>
+                    </div>
+                </div>
+                <p class="language">JavaScript</p>
+                <div class="bar">
+                    <div class="graph javascript">
+                        <p class="percent">70</p>
+                    </div>
+                </div>
+                <h3>バックエンド</h3>
+                <p class="language">Java</p>
+                <div class="bar">
+                    <div class="graph java">
+                        <p class="percent">55</p>
+                    </div>
+                </div>
+                <p class="language">Kotlin</p>
+                <div class="bar">
+                    <div class="graph kotlin">
+                        <p class="percent">40</p>
+                    </div>
+                </div>
+                <p class="language">PHP</p>
+                <div class="bar">
+                    <div class="graph php">
+                        <p class="percent">25</p>
+                    </div>
+                </div>
+                <h3>フレームワーク</h3>
+                <p class="language">Vue</p>
+                <div class="bar">
+                    <div class="graph vue">
+                        <p class="percent">25</p>
+                    </div>
+                </div>
+                <div class="learnPercentList">
+                    <p class="learnPercent">0～:勉強中</p>
+                    <p class="learnPercent">50～:基礎理解済み</p>
+                    <p class="learnPercent">75～:1人で解決可能</p>
+                    <p class="learnPercent">100:マスター</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
