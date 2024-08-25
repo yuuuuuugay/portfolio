@@ -31,11 +31,11 @@ const navprofileEn = document.querySelector("#navprofileEn")
 //プロフィールナビゲーション文字（日本語）
 const navprofileJa = document.querySelector("#navprofileJa")
 //スキルナビゲーション
-const navSkils = document.querySelector("#navSkils")
+const navskills = document.querySelector("#navskills")
 //スキルナビゲーション文字（英語）
-const navSkilsEn = document.querySelector("#navSkilsEn")
+const navskillsEn = document.querySelector("#navskillsEn")
 //スキルナビゲーション文字（日本語）
-const navSkilsJa = document.querySelector("#navSkilsJa")
+const navskillsJa = document.querySelector("#navskillsJa")
 //ホーム画面
 const home = document.querySelector("#home")
 //星
@@ -50,11 +50,11 @@ const clouds = document.querySelector('#clouds')
 //プロフィールテキスト画面(スクロール文字用)
 const profileTextScreen = document.querySelector('#profileTextScreen')
 //スキル画面
-const skils = document.querySelector("#skils")
+const skills = document.querySelector("#skills")
 //シャボン玉
 const soaps = document.querySelector('#soaps')
 //スキルテキスト画面(スクロール文字用)
-const skilsTextScreen = document.querySelector('#skilsTextScreen')
+const skillsTextScreen = document.querySelector('#skillsTextScreen')
 
 
 //初期カーソル(レスポンシブ)
@@ -327,15 +327,15 @@ navprofile.addEventListener('mouseenter', () => {
     navMouseenter(navprofileEn,navprofileJa)
 })
 //スキルナビゲーションホバー時
-navSkils.addEventListener('mouseenter', () => {
-    navMouseenter(navSkilsEn,navSkilsJa)
+navskills.addEventListener('mouseenter', () => {
+    navMouseenter(navskillsEn,navskillsJa)
 })
 //プロフィールテキスト画面(スクロール文字用)
 profileTextScreen.addEventListener('mouseenter', () => {
     navMouseenter("null","null")
 })
 //スキルテキスト画面(スクロール文字用)
-skilsTextScreen.addEventListener('mouseenter', () => {
+skillsTextScreen.addEventListener('mouseenter', () => {
     navMouseenter("null","null")
 })
 
@@ -445,15 +445,15 @@ navprofile.addEventListener('mouseleave', () => {
     navMouseleave(navprofileEn,navprofileJa)
 })
 //スキルナビゲーションホバー解除時
-navSkils.addEventListener('mouseleave', () => {
-    navMouseleave(navSkilsEn,navSkilsJa)
+navskills.addEventListener('mouseleave', () => {
+    navMouseleave(navskillsEn,navskillsJa)
 })
 //プロフィールテキスト画面(スクロール文字用)
 profileTextScreen.addEventListener('mouseleave', () => {
     navMouseleave('null','null')
 })
 //スキルテキスト画面(スクロール文字用)
-skilsTextScreen.addEventListener('mouseleave', () => {
+skillsTextScreen.addEventListener('mouseleave', () => {
     navMouseleave('null','null')
 })
 
@@ -607,15 +607,15 @@ function navchange(navClick){
     if(navClick == 'navHome'){
         home.style.display = 'block';
         profile.style.display = 'none';
-        skils.style.display = 'none';
+        skills.style.display = 'none';
     }else if(navClick == 'navprofile'){
         home.style.display = 'none';
         profile.style.display = 'block';
-        skils.style.display = 'none';
-    }else if(navClick == 'navSkils'){
+        skills.style.display = 'none';
+    }else if(navClick == 'navskills'){
         home.style.display = 'none';
         profile.style.display = 'none';
-        skils.style.display = 'block';
+        skills.style.display = 'block';
     }
 }
 //ホームナビゲーションクリック時
@@ -629,9 +629,9 @@ navprofile.addEventListener('click', () => {
     setTimeout(navchange, 750,'navprofile')
 })
 //スキルナビゲーションクリック時
-navSkils.addEventListener('click', () => {
+navskills.addEventListener('click', () => {
     navClick();
-    setTimeout(navchange, 750,'navSkils')
+    setTimeout(navchange, 750,'navskills')
 })
 
 
