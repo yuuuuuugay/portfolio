@@ -272,8 +272,10 @@ body{
     color: #000000;
     opacity: 0;
 }
-.navList:hover{
-    background-color: rgba(255, 255, 255, 0.8);
+@media screen and (min-width: 9600px) {
+    .navList:hover{
+        background-color: rgba(255, 255, 255, 0.8);
+    }
 }
 
 
@@ -678,6 +680,9 @@ body{
 
 /* レスポンシブ対応（タブレット） */
 @media screen and (max-width: 959px) {
+    .navList{
+        border: rgba(255, 255, 255, 0.8) solid 2px;
+    }
     .fa-sun{
         top: 10vh;
         left: 0;
@@ -696,6 +701,9 @@ body{
 
 /* レスポンシブ対応（スマホ） */
 @media screen and (max-width: 480px) {
+    .navList{
+        border: rgba(255, 255, 255, 0.8) solid 2px;
+    }
     .fa-moon{
         text-shadow: 0 0 40px #ffe900;
     }
