@@ -108,6 +108,18 @@ document.addEventListener('mousemove', (e) => {
 window.addEventListener('load' , () => {
     //ロード文字
     loadText.classList.add('fadeOut')
+    loadText.animate(
+        {
+            left: ['-50vw']
+        }
+        ,
+        {
+            delay: 3000,
+            duration: 1000,
+            easing: 'ease',
+            fill: 'forwards'
+        }
+    )
     //左ロード画面
     loadLeft.animate(
         {
