@@ -318,26 +318,29 @@ function navMouseenter(navEn,navJa){
         )
     }
 }
-//ホームナビゲーションホバー時
-navHome.addEventListener('mouseenter', () => {
-    navMouseenter(navHomeEn,navHomeJa)
-})
-//プロフィールナビゲーションホバー時
-navprofile.addEventListener('mouseenter', () => {
-    navMouseenter(navprofileEn,navprofileJa)
-})
-//スキルナビゲーションホバー時
-navskills.addEventListener('mouseenter', () => {
-    navMouseenter(navskillsEn,navskillsJa)
-})
-//プロフィールテキスト画面(スクロール文字用)
-profileTextScreen.addEventListener('mouseenter', () => {
-    navMouseenter("null","null")
-})
-//スキルテキスト画面(スクロール文字用)
-skillsTextScreen.addEventListener('mouseenter', () => {
-    navMouseenter("null","null")
-})
+// PCのみ
+if (window.matchMedia('(min-width: 960px)').matches) {
+    //ホームナビゲーションホバー時
+    navHome.addEventListener('mouseenter', () => {
+        navMouseenter(navHomeEn,navHomeJa)
+    })
+    //プロフィールナビゲーションホバー時
+    navprofile.addEventListener('mouseenter', () => {
+        navMouseenter(navprofileEn,navprofileJa)
+    })
+    //スキルナビゲーションホバー時
+    navskills.addEventListener('mouseenter', () => {
+        navMouseenter(navskillsEn,navskillsJa)
+    })
+    //プロフィールテキスト画面(スクロール文字用)
+    profileTextScreen.addEventListener('mouseenter', () => {
+        navMouseenter("null","null")
+    })
+    //スキルテキスト画面(スクロール文字用)
+    skillsTextScreen.addEventListener('mouseenter', () => {
+        navMouseenter("null","null")
+    })
+}
 
 
 
@@ -436,26 +439,29 @@ function navMouseleave(navEn,navJa){
         )
     }
 }
-//ホームナビゲーションホバー解除時
-navHome.addEventListener('mouseleave', () => {
-    navMouseleave(navHomeEn,navHomeJa)
-})
-//プロフィールナビゲーションホバー解除時
-navprofile.addEventListener('mouseleave', () => {
-    navMouseleave(navprofileEn,navprofileJa)
-})
-//スキルナビゲーションホバー解除時
-navskills.addEventListener('mouseleave', () => {
-    navMouseleave(navskillsEn,navskillsJa)
-})
-//プロフィールテキスト画面(スクロール文字用)
-profileTextScreen.addEventListener('mouseleave', () => {
-    navMouseleave('null','null')
-})
-//スキルテキスト画面(スクロール文字用)
-skillsTextScreen.addEventListener('mouseleave', () => {
-    navMouseleave('null','null')
-})
+// PCのみ
+if (window.matchMedia('(min-width: 960px)').matches) {
+    //ホームナビゲーションホバー解除時
+    navHome.addEventListener('mouseleave', () => {
+        navMouseleave(navHomeEn,navHomeJa)
+    })
+    //プロフィールナビゲーションホバー解除時
+    navprofile.addEventListener('mouseleave', () => {
+        navMouseleave(navprofileEn,navprofileJa)
+    })
+    //スキルナビゲーションホバー解除時
+    navskills.addEventListener('mouseleave', () => {
+        navMouseleave(navskillsEn,navskillsJa)
+    })
+    //プロフィールテキスト画面(スクロール文字用)
+    profileTextScreen.addEventListener('mouseleave', () => {
+        navMouseleave('null','null')
+    })
+    //スキルテキスト画面(スクロール文字用)
+    skillsTextScreen.addEventListener('mouseleave', () => {
+        navMouseleave('null','null')
+    })
+}
 
 
 
