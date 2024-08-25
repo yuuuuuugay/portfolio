@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ</title>
+    <script src="https://kit.fontawesome.com/9ec583985e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js" defer></script>
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Yusei+Magic&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=M+PLUS+Rounded+1c&family=Yusei+Magic&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- カーソル -->
+    <div class="cursor" id="cursor">
+        <p class="pushText" id="pushText">PUSH</p>
+        <p class="scrollText" id="scrollText">SCROLL</p>
+    </div>
+    <div class="cursorSlow" id="cursorSlow"></div>
+    <div class="cursorSlowSlow" id="cursorSlowSlow"></div>
+    <!-- ロード画面 -->
+    <div class="load">
+        <div class="loadText" id="loadText">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+        <div class="loadLeft" id="loadLeft"></div>
+        <div class="loadRight" id="loadRight"></div>
+    </div>
+    <!-- ナビゲーション -->
+    <div class="nav">
+        <p class="navList navHome" id="navHome">
+            <span id="navHomeEn">
+                HOME
+            </span>
+            <span id="navHomeJa">
+                ホーム
+            </span>
+        </p>
+        <p class="navList navprofile" id="navprofile">
+            <span id="navprofileEn">
+                PROFILE
+            </span>
+            <span id="navprofileJa">
+                プロフィール
+            </span>
+        </p>
+        <p class="navList navSkils" id="navSkils">
+            <span id="navSkilsEn">
+                SKILS
+            </span>
+            <span id="navSkilsJa">
+                スキル
+            </span>
+        </p>
+    </div>
+    <!-- ホーム画面 -->
+    <div class="home" id="home">
+        <div class="stars" id="stars"></div>
+        <div class="fa-solid fa-moon"></div>
+        <p class="portfolio" id="portfolio">portfolio</p>
+        <p class="myName" id="myName">Yuga Yamamoto</p>
+    </div>
+    <!-- プロフィール画面 -->
+    <div class="profile" id="profile">
+        <i class="fa-solid fa-sun"></i>
+        <div class="clouds" id="clouds"></div>
+        <div class="profileTextScreen" id="profileTextScreen">
+            <div class="scroll">Scroll</div>
+            <div class="scrollBar"></div>
+            <div class="profileText screenText">
+                <h2>プロフィール</h2>
+                <h3>名前</h3>
+                <p>山本 悠雅</p>
+                <h3>年齢</h3>
+                <p>23歳</p>
+                <h3>出身</h3>
+                <p>愛知県</p>
+                <h3>現住地</h3>
+                <p>東京都大田区</p>
+                <h3>卒業大学</h3>
+                <p>大同大学</p>
+                <h3>趣味</h3>
+                <div class="likings">
+                    <div class="liking">
+                        <i class="fa-solid fa-gamepad"></i><br>
+                        <span>ゲーム</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-music"></i><br>
+                        <span>音楽鑑賞</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span>YouTube</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-building-columns"></i><br>
+                        <span>美術館</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-microphone-lines"></i><br>
+                        <span>カラオケ</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-kitchen-set"></i><br>
+                        <span>料理</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-cat"></i><br>
+                        <span>猫</span>
+                    </div>
+                    <div class="liking">
+                        <i class="fa-solid fa-shirt"></i><br>
+                        <span>服</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- スキル画面 -->
+    <div class="skils" id="skils">
+        <div class="soaps" id="soaps"></div>
+        <div class="skilsTextScreen" id="skilsTextScreen">
+            <div class="skilsText screenText">
+                <div class="scroll">Scroll</div>
+                <div class="scrollBar"></div>
+                <h2>スキル</h2>
+                <h3>フロントエンド</h3>
+                <p class="language">HTML</p>
+                <div class="bar">
+                    <div class="graph html">
+                        <p class="percent">75</p>
+                    </div>
+                </div>
+                <p class="language">CSS</p>
+                <div class="bar">
+                    <div class="graph css">
+                        <p class="percent">75</p>
+                    </div>
+                </div>
+                <p class="language">JavaScript</p>
+                <div class="bar">
+                    <div class="graph javascript">
+                        <p class="percent">70</p>
+                    </div>
+                </div>
+                <h3>バックエンド</h3>
+                <p class="language">Java</p>
+                <div class="bar">
+                    <div class="graph java">
+                        <p class="percent">55</p>
+                    </div>
+                </div>
+                <p class="language">Kotlin</p>
+                <div class="bar">
+                    <div class="graph kotlin">
+                        <p class="percent">40</p>
+                    </div>
+                </div>
+                <p class="language">PHP</p>
+                <div class="bar">
+                    <div class="graph php">
+                        <p class="percent">25</p>
+                    </div>
+                </div>
+                <h3>フレームワーク</h3>
+                <p class="language">Vue</p>
+                <div class="bar">
+                    <div class="graph vue">
+                        <p class="percent">25</p>
+                    </div>
+                </div>
+                <div class="learnPercentList">
+                    <p class="learnPercent">0～:勉強中</p>
+                    <p class="learnPercent">50～:基礎理解済み</p>
+                    <p class="learnPercent">75～:1人で解決可能</p>
+                    <p class="learnPercent">100:マスター</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
