@@ -607,7 +607,7 @@ body{
     overflow: hidden;
 }
 .skillsText h2{
-    color: #5beb7a;
+    color: #1ee324;
 }
 .language{
     color: #000000;
@@ -678,6 +678,37 @@ body{
 
 
 
+/* その他画面 */
+.others{
+    background: linear-gradient(to bottom, rgba(190, 118, 60, 1) 30%, rgba(190, 118, 60, 0.3) 100%);
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+.othersTextScreen{
+    position: absolute;
+    top: 15vh;
+    left: 50vw;
+    transform: translate(-50%,0);
+    background-color: #ede79a;
+    height: 80vh;
+    width: calc(50vw - 30px);
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.othersText h2{
+    color: #be763c;
+}
+.othersText p{
+    font-size: 30px;
+    margin-bottom:10px;
+}
+
+
+
 /* レスポンシブ対応（タブレット） */
 @media screen and (max-width: 959px) {
     .navList{
@@ -688,9 +719,16 @@ body{
         left: 0;
         transform: translate(-50%,-50%)
     }
-    .profileTextScreen, .skillsTextScreen{
+    .profileTextScreen, .skillsTextScreen, .othersTextScreen{
         left: 10vw;
         width: 80vw;
+        transform: translate(0,0);
+    }
+    .screenText::-webkit-scrollbar{
+        width: 0px;
+    }
+    .screenText::-webkit-scrollbar-thumb{
+        width: 0px;
     }
     .learnPercent{
         width: 100%;
@@ -714,11 +752,11 @@ body{
         font-size: 40px;
         transform: translateX(-51%);
     }
-    .profileTextScreen{
+    .profileTextScreen, .skillsTextScreen , .othersTextScreen{
         height: 70vh;
-    }
-    .skillsTextScreen{
-        height: 70vh;
+        left: 10vw;
+        width: 80vw;
+        transform: translate(0,0);
     }
     .screenText::-webkit-scrollbar{
         width: 0px;
@@ -768,14 +806,13 @@ body{
         left: 0;
         transform: translate(-50%,-50%)
     }
-    .profileTextScreen, .skillsTextScreen{
-        left: 10vw;
-        width: 80vw;
-    }
     .learnPercent{
         width: 100%;
     }
     .learnPercentList{
         margin: 30px 10% 20px;
+    }
+    .othersText p{
+        font-size: 16px;
     }
 }
