@@ -36,6 +36,12 @@ const navskills = document.querySelector("#navskills")
 const navskillsEn = document.querySelector("#navskillsEn")
 //スキルナビゲーション文字（日本語）
 const navskillsJa = document.querySelector("#navskillsJa")
+//その他ナビゲーション
+const navOthers = document.querySelector("#navOthers")
+//その他ナビゲーション文字（英語）
+const navSOthersEn = document.querySelector("#navSOthersEn")
+//その他ナビゲーション文字（日本語）
+const navOthersJa = document.querySelector("#navOthersJa")
 //ホーム画面
 const home = document.querySelector("#home")
 //星
@@ -55,6 +61,9 @@ const skills = document.querySelector("#skills")
 const soaps = document.querySelector('#soaps')
 //スキルテキスト画面(スクロール文字用)
 const skillsTextScreen = document.querySelector('#skillsTextScreen')
+//その他画面
+const others = document.querySelector('#others')
+
 
 
 //初期カーソル(レスポンシブ)
@@ -332,6 +341,10 @@ if (window.matchMedia('(min-width: 960px)').matches) {
     navskills.addEventListener('mouseenter', () => {
         navMouseenter(navskillsEn,navskillsJa)
     })
+    //その他ナビゲーションホバー時
+    navOthers.addEventListener('mouseenter', () => {
+        navMouseenter(navSOthersEn,navOthersJa)
+    })
     //プロフィールテキスト画面(スクロール文字用)
     profileTextScreen.addEventListener('mouseenter', () => {
         navMouseenter("null","null")
@@ -452,6 +465,10 @@ if (window.matchMedia('(min-width: 960px)').matches) {
     //スキルナビゲーションホバー解除時
     navskills.addEventListener('mouseleave', () => {
         navMouseleave(navskillsEn,navskillsJa)
+    })
+    //その他ナビゲーションホバー解除時
+    navOthers.addEventListener('mouseleave', () => {
+        navMouseleave(navSOthersEn,navOthersJa)
     })
     //プロフィールテキスト画面(スクロール文字用)
     profileTextScreen.addEventListener('mouseleave', () => {
@@ -614,14 +631,22 @@ function navchange(navClick){
         home.style.display = 'block';
         profile.style.display = 'none';
         skills.style.display = 'none';
+        others.style.display = 'none';
     }else if(navClick == 'navprofile'){
         home.style.display = 'none';
         profile.style.display = 'block';
         skills.style.display = 'none';
+        others.style.display = 'none';
     }else if(navClick == 'navskills'){
         home.style.display = 'none';
         profile.style.display = 'none';
         skills.style.display = 'block';
+        others.style.display = 'none';
+    }else if(navClick == 'navOthers'){
+        home.style.display = 'none';
+        profile.style.display = 'none';
+        skills.style.display = 'none';
+        others.style.display = 'block';
     }
 }
 //ホームナビゲーションクリック時
@@ -638,6 +663,11 @@ navprofile.addEventListener('click', () => {
 navskills.addEventListener('click', () => {
     navClick();
     setTimeout(navchange, 750,'navskills')
+})
+//その他ナビゲーションクリック時
+navOthers.addEventListener('click', () => {
+    navClick();
+    setTimeout(navchange, 750,'navOthers')
 })
 
 
