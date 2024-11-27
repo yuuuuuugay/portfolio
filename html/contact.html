@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ポートフォリオ</title>
+    <script src="https://kit.fontawesome.com/9ec583985e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kosugi+Maru&family=M+PLUS+1p&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=M+PLUS+Rounded+1c&family=Yusei+Magic&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- カーソル -->
+    <div class="cursor hidden-sp">
+        <div class="firstCursor" id="firstCursor"></div>
+        <div class="secondCursor" id="secondCursor"></div>
+        <div class="thirdCursor" id="thirdCursor"></div>
+    </div>
+    <!-- ロード画面 -->
+    <div class="load">
+        <div class="loadText" id="loadText">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+        <div class="loadLeft" id="loadLeft"></div>
+        <div class="loadRight" id="loadRight"></div>
+    </div>
+    <!-- ナビゲーション -->
+    <div class="nav">
+        <a href='./index.html' class="navLink" id="navHome">
+            <span id="navHomeEn">
+                HOME
+            </span>
+            <span id="navHomeJa">
+                ホーム
+            </span>
+        </a>
+        <a href='./about.html' class="navLink" id="navAbout">
+            <span id="navAboutEn">
+                ABOUT
+            </span>
+            <span id="navAboutJa">
+                私について
+            </span>
+        </a>
+        <a href='./skill.html' class="navLink" id="navSkill">
+            <span id="navSkillEn">
+                SKILLS
+            </span>
+            <span id="navSkillJa">
+                できること
+            </span>
+        </a>
+        <a href='./work.html' class="navLink" id="navWork">
+            <span id="navSOthersEn">
+                WORKS
+            </span>
+            <span id="navWorkJa">
+                制作物
+            </span>
+        </a>
+        <a href='./contact.html' class="navLink" id="navContact">
+            <span id="navContactEn">
+                CONTACT
+            </span>
+            <span id="navContactJa">
+                お問い合わせ
+            </span>
+        </a>
+    </div>
+    <!-- モード切替 -->
+    <div class="toggle">
+        <i class="fa-solid fa-sun amColorBlack pmColorWhite"></i>
+        <a class="toggleArea" id="toggleArea">
+            <div class="toggleSwitch" id="toggleSwitch"></div>
+        </a>
+        <i class="fa-regular fa-moon amColorBlack pmColorWhite"></i>
+    </div>
+    <!-- ホーム画面 -->
+    <section class="contact">
+        <div class="snows" id="contact">
+            <div class="stars" id="stars"></div>
+        </div>
+        <div class="screenTextArea">
+            <h2 class="sectionTittle">コンタクト</h2>
+            <p class="sectionSubTittle">お問い合わせ</p>
+            <p class="contactText">
+                閲覧していただき<br class="hidden-pc">ありがとうございます。
+                <br>ご依頼・ご質問等あれば<br class="hidden-pc">下記メールアドレスより<br class="hidden-pc">御連絡下さい。
+            </p>
+            <a href="mailto:address" class="mail" id="mail">yu01u10ga@gmail.com</a>
+        </div>
+    </section>
+</body>
+</html>

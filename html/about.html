@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ポートフォリオ</title>
+    <script src="https://kit.fontawesome.com/9ec583985e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kosugi+Maru&family=M+PLUS+1p&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=M+PLUS+Rounded+1c&family=Yusei+Magic&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- カーソル -->
+    <div class="cursor hidden-sp">
+        <div class="firstCursor" id="firstCursor"></div>
+        <div class="secondCursor" id="secondCursor"></div>
+        <div class="thirdCursor" id="thirdCursor"></div>
+    </div>
+    <!-- ロード画面 -->
+    <div class="load">
+        <div class="loadText" id="loadText">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+        <div class="loadLeft" id="loadLeft"></div>
+        <div class="loadRight" id="loadRight"></div>
+    </div>
+    <!-- ナビゲーション -->
+    <div class="nav">
+        <a href='./index.html' class="navLink" id="navHome">
+            <span id="navHomeEn">
+                HOME
+            </span>
+            <span id="navHomeJa">
+                ホーム
+            </span>
+        </a>
+        <a href='./about.html' class="navLink" id="navAbout">
+            <span id="navAboutEn">
+                ABOUT
+            </span>
+            <span id="navAboutJa">
+                私について
+            </span>
+        </a>
+        <a href='./skill.html' class="navLink" id="navSkill">
+            <span id="navSkillEn">
+                SKILLS
+            </span>
+            <span id="navSkillJa">
+                できること
+            </span>
+        </a>
+        <a href='./work.html' class="navLink" id="navWork">
+            <span id="navSOthersEn">
+                WORKS
+            </span>
+            <span id="navWorkJa">
+                制作物
+            </span>
+        </a>
+        <a href='./contact.html' class="navLink" id="navContact">
+            <span id="navContactEn">
+                CONTACT
+            </span>
+            <span id="navContactJa">
+                お問い合わせ
+            </span>
+        </a>
+    </div>
+    <!-- モード切替 -->
+    <div class="toggle">
+        <i class="fa-solid fa-sun amColorBlack pmColorWhite"></i>
+        <a class="toggleArea" id="toggleArea">
+            <div class="toggleSwitch" id="toggleSwitch"></div>
+        </a>
+        <i class="fa-regular fa-moon amColorBlack pmColorWhite"></i>
+    </div>
+    <!-- プロフィール画面 -->
+    <section class="about">
+        <div class="sakuras" id="about">
+            <div class="stars" id="stars"></div>
+            <div class="reaf reaf01"><img src="../img/sakura1.png" alt="サクラ"></div>
+            <div class="reaf reaf02"><img src="../img/sakura2.png" alt="サクラ"></div>
+            <div class="reaf reaf03"><img src="../img/sakura3.png" alt="サクラ"></div>
+            <div class="reaf reaf04"><img src="../img/sakura4.png" alt="サクラ"></div>
+            <div class="reaf reaf05"><img src="../img/sakura1.png" alt="サクラ"></div>
+            <div class="reaf reaf06"><img src="../img/sakura2.png" alt="サクラ"></div>
+            <div class="reaf reaf07"><img src="../img/sakura3.png" alt="サクラ"></div>
+            <div class="reaf reaf08"><img src="../img/sakura4.png" alt="サクラ"></div>
+            <div class="reaf reaf01"><img src="../img/sakura1.png" alt="サクラ"></div>
+            <div class="reaf reaf10"><img src="../img/sakura2.png" alt="サクラ"></div>
+            <div class="reaf reaf11"><img src="../img/sakura3.png" alt="サクラ"></div>
+            <div class="reaf reaf12"><img src="../img/sakura4.png" alt="サクラ"></div>
+            <div class="reaf reaf13"><img src="../img/sakura1.png" alt="サクラ"></div>
+            <div class="reaf reaf14"><img src="../img/sakura2.png" alt="サクラ"></div>
+            <div class="reaf reaf15"><img src="../img/sakura3.png" alt="サクラ"></div>
+            <div class="reaf reaf16"><img src="../img/sakura4.png" alt="サクラ"></div>
+        </div>
+        <div class="screenTextArea">
+            <h2 class="sectionTittle">プロフィール</h2>
+            <p class="sectionSubTittle">私について</p>
+            <h3 class="sectionHeading">ヒストリー</h3>
+            <p class="sectionText">
+                ２００１年愛知県生まれ。２０２３年に就職を気に東京へ転居。
+                <br>大学卒業後、自動車メーカーへ就職し研究を行う。
+                <br>その中で、Excelを用いた単純作業を毎日３０分～４５分程行っていた。
+                <br>しかし、その単純作業はヒューマンエラーが起きやすいかつ多くの時間を費やしていた。
+                <br>そこで、この単純作業をシステム化できないと考え、独学でVBAを学びシステム化することに成功する。
+                <br>その結果、プログラミングに興味を持ち２０２３年１１月にIT企業に転職する。
+                <br>その後、プログラミングの中でもフロントエンドはユーザーが直接触れる部分であるため、
+                <br>おしゃれな画面を作成したいと思い２０２４年５月からフロントエンドの勉強を開始している。
+            </p>
+            <h3 class="sectionHeading">趣味</h3>
+            <div class="likings">
+                <div class="liking">
+                    <i class="fa-solid fa-kitchen-set likingIcon"></i>
+                    <div class="likingTextArea">
+                        <h4 class="likingTittle">料理</h4>
+                        <p class="likingText">
+                            毎日するほど料理が好きです。
+                            <br>よく作る料理は「ひき肉野菜炒め」と「ほうれん草スープ」です。
+                            <br>得意料理は「だし巻き卵」です。
+                        </p>
+                    </div>
+                </div>
+                <div class="liking">
+                    <i class="fa-solid fa-gamepad likingIcon"></i>
+                    <div class="likingTextArea">
+                        <h4 class="likingTittle">ゲーム</h4>
+                        <p class="likingText">
+                            休日暇な時があればゲームをすることが多いです。
+                            <br>主にNintendo Switchでゲームをすることが多いです。
+                            <br>友人とゲームをする時間が一番好きです。
+                        </p>
+                    </div>  
+                </div>
+                <div class="liking">
+                    <i class="fa-solid fa-music likingIcon"></i>
+                    <div class="likingTextArea">
+                        <h4 class="likingTittle">音楽鑑賞</h4>
+                        <p class="likingText">
+                            毎日通勤やお風呂内で音楽を聴くことが多いです。
+                            <br>元気が出る曲や、はやりの曲を聴くことが好きです。
+                        </p>
+                    </div>
+                </div>
+                <div class="liking">
+                    <i class="fa-brands fa-youtube likingIcon"></i>
+                    <div class="likingTextArea">
+                        <h4 class="likingTittle">YouTube</h4>
+                        <p class="likingText">
+                            家にいるときはほとんどYouTubeを見ています。
+                            <br>好きなYouTuberさんの動画を何回も見ることが好きです。
+                            <br>静かすぎる環境が苦手なため基本YouTubeを垂れ流しています。
+                        </p>
+                    </div>
+                </div>
+                <div class="liking">
+                    <i class="fa-solid fa-microphone-lines likingIcon"></i>
+                    <div class="likingTextArea">
+                        <h4 class="likingTittle">カラオケ</h4>
+                        <p class="likingText">
+                            大学時代は週１日行くほど好きです。
+                            <br>好きな曲を大音量で聞けたり歌える点が好きです。
+                            <br>でもカラオケは下手であまり高得点は取れません。
+                        </p>
+                    </div>
+                </div>
+                <div class="liking">
+                    <i class="fa-solid fa-cat likingIcon"></i>
+                    <div class="likingTextArea">
+                        <h4 class="likingTittle">猫</h4>
+                        <p class="likingText">
+                            ミヌエットが特に好きです。
+                            <br>１か月に1回くらいは猫カフェに行きます。
+                            <br>将来、猫を飼いたいと思っています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">
+                <div class="arrowLeft" id="arrowLeft">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="arrowRight" id="arrowRight">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

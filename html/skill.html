@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ポートフォリオ</title>
+    <script src="https://kit.fontawesome.com/9ec583985e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kosugi+Maru&family=M+PLUS+1p&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=M+PLUS+Rounded+1c&family=Yusei+Magic&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- カーソル -->
+    <div class="cursor hidden-sp">
+        <div class="firstCursor" id="firstCursor"></div>
+        <div class="secondCursor" id="secondCursor"></div>
+        <div class="thirdCursor" id="thirdCursor"></div>
+    </div>
+    <!-- ロード画面 -->
+    <div class="load">
+        <div class="loadText" id="loadText">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+        <div class="loadLeft" id="loadLeft"></div>
+        <div class="loadRight" id="loadRight"></div>
+    </div>
+    <!-- ナビゲーション -->
+     <div class="nav">
+        <a href='./index.html' class="navLink" id="navHome">
+            <span id="navHomeEn">
+                HOME
+            </span>
+            <span id="navHomeJa">
+                ホーム
+            </span>
+        </a>
+        <a href='./about.html' class="navLink" id="navAbout">
+            <span id="navAboutEn">
+                ABOUT
+            </span>
+            <span id="navAboutJa">
+                私について
+            </span>
+        </a>
+        <a href='./skill.html' class="navLink" id="navSkill">
+            <span id="navSkillEn">
+                SKILLS
+            </span>
+            <span id="navSkillJa">
+                できること
+            </span>
+        </a>
+        <a href='./work.html' class="navLink" id="navWork">
+            <span id="navSOthersEn">
+                WORKS
+            </span>
+            <span id="navWorkJa">
+                制作物
+            </span>
+        </a>
+        <a href='./contact.html' class="navLink" id="navContact">
+            <span id="navContactEn">
+                CONTACT
+            </span>
+            <span id="navContactJa">
+                お問い合わせ
+            </span>
+        </a>
+    </div>
+    <!-- モード切替 -->
+    <div class="toggle">
+        <i class="fa-solid fa-sun amColorBlack pmColorWhite"></i>
+        <a class="toggleArea" id="toggleArea">
+            <div class="toggleSwitch" id="toggleSwitch"></div>
+        </a>
+        <i class="fa-regular fa-moon amColorBlack pmColorWhite"></i>
+    </div>
+    <!-- スキル画面 -->
+    <div class="skill">
+        <div class="fireflowers" id="skill">
+            <div class="stars" id="stars"></div>
+            <div class="fireflower blueFireflower"></div>
+            <div class="fireflower lightBlueFireflower"></div>
+            <div class="fireflower greenFireflower"></div>
+            <div class="fireflower yellowFireflower"></div>
+            <div class="fireflower whiteFireflower"></div>
+            <div class="fireflower orangeFireflower"></div>
+            <div class="fireflower redFireflower"></div>
+            <div class="fireflower purpleFireflower"></div>
+        </div>
+        <div class="screenTextArea">
+            <h2 class="sectionTittle">スキル</h2>
+            <p class="sectionSubTittle">できること</p>
+            <div class="skills">
+                <h3 class="sectionHeading">フロントエンド</h3>
+                <p class="language">HTML</p>
+                <div class="barBox">
+                    <div class="bar html">
+                        <p class="percent">90</p>
+                    </div>
+                </div>
+                <p class="language">CSS</p>
+                <div class="barBox">
+                    <div class="bar css">
+                        <p class="percent">90</p>
+                    </div>
+                </div>
+                <p class="language">JavaScript</p>
+                <div class="barBox">
+                    <div class="bar javascript">
+                        <p class="percent">85</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skills">
+                <h3 class="sectionHeading">バックエンド</h3>
+                <p class="language">Java</p>
+                <div class="barBox">
+                    <div class="bar java">
+                        <p class="percent">55</p>
+                    </div>
+                </div>
+                <p class="language">Kotlin</p>
+                <div class="barBox">
+                    <div class="bar kotlin">
+                        <p class="percent">50</p>
+                    </div>
+                </div>
+                <p class="language">PHP</p>
+                <div class="barBox">
+                    <div class="bar php">
+                        <p class="percent">50</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skills">
+                <h3 class="sectionHeading">フレームワーク</h3>
+                <p class="language">Vue</p>
+                <div class="barBox">
+                    <div class="bar vue">
+                        <p class="percent">25</p>
+                    </div>
+                </div>
+            </div>
+            <div class="learnPercentList">
+                <p class="learnPercent">0～:知識有り</p>
+                <p class="learnPercent">50～:基礎理解済み</p>
+                <p class="learnPercent">75～:1人で解決可能</p>
+                <p class="learnPercent">100:マスター</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ポートフォリオ</title>
+    <script src="https://kit.fontawesome.com/9ec583985e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kosugi+Maru&family=M+PLUS+1p&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=M+PLUS+Rounded+1c&family=Yusei+Magic&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- カーソル -->
+    <div class="cursor hidden-sp">
+        <div class="firstCursor" id="firstCursor"></div>
+        <div class="secondCursor" id="secondCursor"></div>
+        <div class="thirdCursor" id="thirdCursor"></div>
+    </div>
+    <!-- ロード画面 -->
+    <div class="load">
+        <div class="loadText" id="loadText">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+        <div class="loadLeft" id="loadLeft"></div>
+        <div class="loadRight" id="loadRight"></div>
+    </div>
+    <!-- ナビゲーション -->
+    <div class="nav">
+        <a href='./index.html' class="navLink" id="navHome">
+            <span id="navHomeEn">
+                HOME
+            </span>
+            <span id="navHomeJa">
+                ホーム
+            </span>
+        </a>
+        <a href='./about.html' class="navLink" id="navAbout">
+            <span id="navAboutEn">
+                ABOUT
+            </span>
+            <span id="navAboutJa">
+                私について
+            </span>
+        </a>
+        <a href='./skill.html' class="navLink" id="navSkill">
+            <span id="navSkillEn">
+                SKILLS
+            </span>
+            <span id="navSkillJa">
+                できること
+            </span>
+        </a>
+        <a href='./work.html' class="navLink" id="navWork">
+            <span id="navSOthersEn">
+                WORKS
+            </span>
+            <span id="navWorkJa">
+                制作物
+            </span>
+        </a>
+        <a href='./contact.html' class="navLink" id="navContact">
+            <span id="navContactEn">
+                CONTACT
+            </span>
+            <span id="navContactJa">
+                お問い合わせ
+            </span>
+        </a>
+    </div>
+     <!-- モード切替 -->
+    <div class="toggle">
+        <i class="fa-solid fa-sun amColorBlack pmColorWhite"></i>
+        <a class="toggleArea" id="toggleArea">
+            <div class="toggleSwitch" id="toggleSwitch"></div>
+        </a>
+        <i class="fa-regular fa-moon amColorBlack pmColorWhite"></i>
+    </div>
+    <!-- ワーク画面 -->
+    <section class="work">
+        <div class="ginkgo" id="work">
+            <div class="stars" id="stars"></div>
+            <div class="reaf reaf01"><img src="../img/autumnReaf1.png" alt="落ち葉"></div>
+            <div class="reaf reaf02"><img src="../img/autumnReaf2.png" alt="落ち葉"></div>
+            <div class="reaf reaf03"><img src="../img/autumnReaf3.png" alt="落ち葉"></div>
+            <div class="reaf reaf04"><img src="../img/autumnReaf4.png" alt="落ち葉"></div>
+            <div class="reaf reaf05"><img src="../img/autumnReaf5.png" alt="落ち葉"></div>
+            <div class="reaf reaf06"><img src="../img/autumnReaf6.png" alt="落ち葉"></div>
+            <div class="reaf reaf07"><img src="../img/autumnReaf7.png" alt="落ち葉"></div>
+            <div class="reaf reaf08"><img src="../img/autumnReaf8.png" alt="落ち葉"></div>
+            <div class="reaf reaf01"><img src="../img/autumnReaf1.png" alt="落ち葉"></div>
+            <div class="reaf reaf10"><img src="../img/autumnReaf2.png" alt="落ち葉"></div>
+            <div class="reaf reaf11"><img src="../img/autumnReaf3.png" alt="落ち葉"></div>
+            <div class="reaf reaf12"><img src="../img/autumnReaf4.png" alt="落ち葉"></div>
+            <div class="reaf reaf13"><img src="../img/autumnReaf5.png" alt="落ち葉"></div>
+            <div class="reaf reaf14"><img src="../img/autumnReaf6.png" alt="落ち葉"></div>
+            <div class="reaf reaf15"><img src="../img/autumnReaf7.png" alt="落ち葉"></div>
+            <div class="reaf reaf16"><img src="../img/autumnReaf8.png" alt="落ち葉"></div>
+        </div>
+        <div class="screenTextArea">
+            <h2 class="sectionTittle">ワーク</h2>
+            <p class="sectionSubTittle">制作物</p>
+            <h3 class="sectionHeading">クライアント制作</h3>
+            <div class="workCards">
+                <div class="workCard">
+                    <a href="./workDetail.html" class="workCardImg" id="sectionLink">
+                        <img src="https://placehold.jp/150x150.png" alt="制作物の写真">
+                    </a>
+                    <p class="sectionText workText">サイト名</p>
+                </div>
+                <div class="workCard">
+                    <a href="./workDetail.html" class="workCardImg" id="sectionLink">
+                        <img src="https://placehold.jp/150x150.png" alt="制作物の写真">
+                    </a>
+                    <p class="sectionText workText">サイト名</p>
+                </div>
+                <div class="workCard">
+                    <a href="./workDetail.html" class="workCardImg" id="sectionLink">
+                        <img src="https://placehold.jp/150x150.png" alt="制作物の写真">
+                    </a>
+                    <p class="sectionText workText">サイト名</p>
+                </div>
+                <div class="workCard">
+                    <a href="./workDetail.html" class="workCardImg" id="sectionLink">
+                        <img src="https://placehold.jp/150x150.png" alt="制作物の写真">
+                    </a>
+                    <p class="sectionText workText">サイト名</p>
+                </div>
+            </div>
+            <h3 class="sectionHeading">個人製作（学習）</h3>
+            <div class="workCards">
+                <div class="workCard">
+                    <a href="./workDetail.html" class="workCardImg" id="sectionLink">
+                        <img src="../img/MY FAVORITE LIST.png" alt="制作物の写真">
+                    </a>
+                    <p class="sectionText workText">MY FAVORITE LIST</p>
+                </div>
+                <div class="workCard">
+                    <a href="./workDetail.html" class="workCardImg" id="sectionLink">
+                        <img src="https://placehold.jp/150x150.png" alt="制作物の写真">
+                    </a>
+                    <p class="sectionText workText">サイト名</p>
+                </div>
+                <div class="workCard">
+                    <a href="./workDetail.html" class="workCardImg" id="sectionLink">
+                        <img src="https://placehold.jp/150x150.png" alt="制作物の写真">
+                    </a>
+                    <p class="sectionText workText">サイト名</p>
+                </div>
+                <div class="workCard">
+                    <a href="./workDetail.html" class="workCardImg" id="sectionLink">
+                        <img src="https://placehold.jp/150x150.png" alt="制作物の写真">
+                    </a>
+                    <p class="sectionText workText">サイト名</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
