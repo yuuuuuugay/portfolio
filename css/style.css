@@ -2,15 +2,10 @@
 /* PC */
 @media screen and (min-width: 960px) {
     /* 初期設定 */
-    css{
-        touch-action:none;
-    }
     html{
         cursor: none;
-        touch-action:none;
     }
     body{
-        touch-action: pan-x pan-y;
         width: 100%;
     }
     a{
@@ -1186,14 +1181,7 @@
 /* レスポンシブ対応（タブレット） */
 @media screen and (min-width:520px) and ( max-width:960px) {
    /* 初期設定 */
-   css{
-    touch-action:none;
-    }
-    html{
-        touch-action:none;
-    }
     body{
-        touch-action: pan-x pan-y;
         width: 100%;
     }
     a{
@@ -2291,14 +2279,7 @@
 /* レスポンシブ対応（スマホ） */
 @media screen and (max-width: 520px) {
        /* 初期設定 */
-   css{
-    touch-action:none;
-    }
-    html{
-        touch-action:none;
-    }
     body{
-        touch-action: pan-x pan-y;
         width: 100%;
     }
     a{
