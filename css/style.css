@@ -22,6 +22,9 @@
     img{
         width: 100%;
     }
+    .hidden-pc{
+        display: none;
+    }
 
 
 
