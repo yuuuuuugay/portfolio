@@ -65,7 +65,7 @@
         top: 0;
         left: 0;
         width: 100vw; 
-        height: 100vh; 
+        height: 100%; 
     }
     .star{
         position: absolute;
@@ -257,7 +257,7 @@
     }
     .loadText{
         position: fixed;
-        top: 50vh;
+        top: 50%;
         left: 50vw;
         transform: translate(-50%,-50%);
         height: 200px;
@@ -389,7 +389,7 @@
     }
     .loadLeft{
         background-color: #d40000;
-        height: 100vh;
+        height: 100%;
         width: 51%;
         position: fixed;
         top: 0;
@@ -398,7 +398,7 @@
     }
     .loadRight{
         background-color: #d40000;
-        height: 100vh;
+        height: 100%;
         width: 51%;
         position: fixed;
         top: 0;
@@ -411,7 +411,7 @@
     /* ナビゲーション */
     .nav{
         position: fixed;
-        height: 10vh;
+        height: 10%;
         width: 100vw;
         background-color: rgba(0, 0, 0, 0.3);
         display: flex;
@@ -508,7 +508,7 @@
 
     /* ホーム画面 */
     .home{
-        height: 100vh;
+        height: 100%;
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -550,7 +550,7 @@
 
     /* プロフィール画面 */
     .about{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -654,7 +654,7 @@
 
     /* スキル画面 */
     .skill{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -910,7 +910,7 @@
 
     /* ワーク画面 */
     .work{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -1022,7 +1022,7 @@
 
     /* コンタクト画面 */
     .contact{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -1240,7 +1240,7 @@
         top: 0;
         left: 0;
         width: 100vw; 
-        height: 100vh; 
+        height: 100%; 
     }
     .star{
         position: absolute;
@@ -1392,7 +1392,7 @@
     }
     .loadText{
         position: fixed;
-        top: 50vh;
+        top: 50%;
         left: 50vw;
         transform: translate(-50%,-50%);
         height: 200px;
@@ -1524,7 +1524,7 @@
     }
     .loadLeft{
         background-color: #d40000;
-        height: 100vh;
+        height: 100%;
         width: 51%;
         position: fixed;
         top: 0;
@@ -1533,7 +1533,7 @@
     }
     .loadRight{
         background-color: #d40000;
-        height: 100vh;
+        height: 100%;
         width: 51%;
         position: fixed;
         top: 0;
@@ -1633,7 +1633,7 @@
 
     /* ホーム画面 */
     .home{
-        height: 100vh;
+        height: 100dvh;
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -1675,7 +1675,7 @@
 
     /* プロフィール画面 */
     .about{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -1770,7 +1770,7 @@
 
     /* スキル画面 */
     .skill{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -2022,7 +2022,7 @@
 
     /* ワーク画面 */
     .work{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -2124,7 +2124,7 @@
 
     /* コンタクト画面 */
     .contact{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -2338,7 +2338,7 @@
         top: 0;
         left: 0;
         width: 100vw; 
-        height: 100vh; 
+        height: 100%; 
     }
     .star{
         position: absolute;
@@ -2490,7 +2490,7 @@
     }
     .loadText{
         position: fixed;
-        top: 50vh;
+        top: 50%;
         left: 50vw;
         transform: translate(-50%,-50%);
         height: 200px;
@@ -2622,7 +2622,7 @@
     }
     .loadLeft{
         background-color: #d40000;
-        height: 100vh;
+        height: 100%;
         width: 51%;
         position: fixed;
         top: 0;
@@ -2631,7 +2631,7 @@
     }
     .loadRight{
         background-color: #d40000;
-        height: 100vh;
+        height: 100%;
         width: 51%;
         position: fixed;
         top: 0;
@@ -2732,7 +2732,7 @@
 
     /* ホーム画面 */
     .home{
-        height: 100vh;
+        height: 100dvh;
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -2774,7 +2774,7 @@
 
     /* プロフィール画面 */
     .about{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -2869,7 +2869,7 @@
 
     /* スキル画面 */
     .skill{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -3121,7 +3121,7 @@
 
     /* ワーク画面 */
     .work{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
@@ -3224,7 +3224,7 @@
 
     /* コンタクト画面 */
     .contact{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         position: relative;
     }
