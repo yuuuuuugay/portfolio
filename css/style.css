@@ -1183,6 +1183,7 @@
    /* 初期設定 */
     body{
         width: 100%;
+	touch-action: pan-x pan-y;
     }
     a{
         color: #000000;
@@ -2281,6 +2282,7 @@
        /* 初期設定 */
     body{
         width: 100%;
+	touch-action: pan-x pan-y;
     }
     a{
         color: #000000;
