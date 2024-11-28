@@ -1,5 +1,5 @@
 //画面全体
-    const html = document.querySelector('html');
+const html = document.querySelector('html');
 
 
 
@@ -69,7 +69,7 @@
     //クエリ取得
     let query = window.location.search.slice(0);
     //トグル全体
-    const toogle = document.querySelector("#toogle");
+    const toggle = document.querySelector("#toggle");
     //トグルエリア
     const toggleArea = document.querySelector("#toggleArea");
     //トグルボタン
@@ -117,123 +117,63 @@ const soaps = document.querySelector('#soaps');
 window.addEventListener('load' , (e) => {
     //ロード文字
     loadText.animate(
-        {
-            opacity: ['1']
-        }
-        ,
-        {
-            duration: 1000,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {opacity: ['1']},
+        {duration: 1000,easing: 'ease',fill: 'forwards'}
     )
     loadText.animate(
-        {
-            opacity: ['0']
-        }
-        ,
-        {
-            delay: 2500,
-            duration: 1000,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {opacity: ['0']},
+        {delay: 1000,duration: 500,easing: 'ease',fill: 'forwards'}
     )
     loadText.animate(
-        {
-            top: ['0'],
-            height: ['0'],
-            display: ['none']
-        }
-        ,
-        {
-            delay: 3000,
-            duration: 1000,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {top: ['0'],height: ['0'],display: ['none']},
+        {delay: 1500,duration: 1000,easing: 'ease',fill: 'forwards'}
     )
     //左ロード画面
     loadLeft.animate(
-        {
-            borderBottomRightRadius: ['50vw 100vh']
-        }
-        ,
-        {
-            delay: 3000,
-            duration: 1000,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {borderBottomRightRadius: ['50vw 100vh']},
+        {delay: 1000,duration: 750,easing: 'ease',fill: 'forwards'}
     )
     loadLeft.animate(
-        {
-            width: ['0']
-        }
-        ,
-        {
-            delay: 4000,
-            duration: 1000,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {width: ['0']},
+        {delay: 1750,duration: 1000,easing: 'ease',fill: 'forwards'}
     )
     // 右ロード画面
     loadRight.animate(
-        {
-            borderBottomLeftRadius: ['50vw 100vh']
-        }
-        ,
-        {
-            delay: 3000,
-            duration: 1000,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {borderBottomLeftRadius: ['50vw 100vh']},
+        {delay: 1000,duration: 750,easing: 'ease',fill: 'forwards'}
     )
     loadRight.animate(
-        {
-            width: ['0']
-        }
-        ,
-        {
-            delay: 4000,
-            duration: 1000,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {width: ['0']},
+        {delay: 1750,duration: 1000,easing: 'ease',fill: 'forwards'}
     )
     //ホーム画面タイトル
-    if(portfolio != null && myName != null){
+    if(portfolio && myName){
         portfolio.animate(
-            {
-                top: ['55%','60%'],
-                opacity: [0,1]
-            }
-            ,
-            {
-                delay: 4500,
-                duration: 1000,
-                easing: 'ease',
-                fill: 'forwards'
-            }
+            {top: ['55%','60%'],opacity: [0,1]},
+            {delay: 2500,duration: 1000,easing: 'ease',fill: 'forwards'}
         )
         myName.animate(
-            {
-                top: ['55%','60%'],
-                opacity: [0,1]
-            }
-            ,
-            {
-                delay: 5000,
-                duration: 1000,
-                easing: 'ease',
-                fill: 'forwards'
-            }
+            {top: ['55%','60%'],opacity: [0,1]},
+            {delay: 3000,duration: 1000,easing: 'ease',fill: 'forwards'}
         )
     }
+
+
+
     //ワーク詳細画面時
-    if((window.location.href.indexOf('detail') > -1) || (window.location.href.indexOf('Detail')) > -1){
+    let workDetailLink =window.location.href;
+    if(workDetailLink.indexOf('/?') !== -1){
+        workDetailLink = workDetailLink.substr(0, workDetailLink.indexOf('/?'));
+    }
+    if(workDetailLink.indexOf('work') !== -1){
+        workDetailLink = workDetailLink.substr(workDetailLink.indexOf('work') + 5);
+        if(workDetailLink.length === 0){
+            workDetailLink = null;
+        }
+    }else{
+        workDetailLink = null;
+    }
+    if(workDetailLink !== null){
         html.style.cursor = 'auto';
         navs.forEach(nav => {
             nav.style.cursor = 'pointer';
@@ -246,48 +186,14 @@ window.addEventListener('load' , (e) => {
         nav.classList.add("workDetailNav");
         navLinks.forEach(navLink => {
             navLink.classList.add("workDetailNavLink");
-        });
-        toogle.style.display = 'none';
+        })
+        toggle.style.display = 'none';
     }
-})
 
 
 
-//カーソル
-document.addEventListener('mousemove', (e) => {
-    if (window.matchMedia('(min-width: 960px)').matches) {
-        firstCursor.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
-        secondCursor.animate(
-            {
-                transform: ['translate(' + e.clientX + 'px, ' + e.clientY + 'px)']
-            }
-            ,
-            {
-                delay: 100,
-                duration: 1000,
-                easing: 'ease',
-                fill: 'forwards'
-            }
-        )
-        thirdCursor.animate(
-            {
-                transform: ['translate(' + e.clientX + 'px, ' + e.clientY + 'px)']
-            }
-            ,
-            {
-                delay: 200,
-                duration: 1000,
-                easing: 'ease',
-                fill: 'forwards'
-            }
-        )
-    }
-})
-
-
-
-//背景アニメーション
-window.addEventListener('load', () => {
+    //背景アニメーション関数
+    
     //星
     if(stars != null){
         for (let i = 0; i <= 400; i++) {
@@ -342,6 +248,99 @@ window.addEventListener('load', () => {
             contact.appendChild(snow);
         }
     }
+
+
+
+    //ダークモード
+    if(query == '?dark'){
+        toggleArea.classList.add("toggleAreaActive");
+        toggleSwitch.classList.add("toggleSwitchActive");
+        const pmColorWhites = document.querySelectorAll('.pmColorWhite');
+        pmColorWhites.forEach(pmColorWhite => {
+            pmColorWhite.classList.add('colorWhite');
+        })
+        const pmColorBlacks = document.querySelectorAll('.pmColorBlack');
+        pmColorBlacks.forEach(pmColorBlack => {
+            pmColorBlack.classList.add('colorBlack');
+        })
+        const amBackGroundColorWhites = document.querySelectorAll('.pmBackGroundColorWhite');
+        amBackGroundColorWhites.forEach(amBackGroundColorWhite => {
+            amBackGroundColorWhite.classList.add('backGroundColorWhite');
+        })
+        const amBackGroundColorBlacks = document.querySelectorAll('.pmBackGroundColorBlack');
+        amBackGroundColorBlacks.forEach(amBackGroundColorBlack => {
+            amBackGroundColorBlack.classList.add('backGroundColorBlack');
+        })
+        if(home != null){
+            home.classList.add('pmHome');
+        }
+        if(about != null){
+            about.classList.add('pmAbout');
+        }
+        if(skill != null){
+            skill.classList.add('pmSkill');
+        }
+        if(work != null){
+            work.classList.add('pmWork');
+        }
+        if(contact != null){
+            contact.classList.add('pmContact');
+        }
+    //ライトモード
+    }else{
+        const amColorWhites = document.querySelectorAll('.amColorWhite');
+        amColorWhites.forEach(amColorWhite => {
+            amColorWhite.classList.add('colorWhite');
+        })
+        const amColorBlacks = document.querySelectorAll('.amColorBlack');
+        amColorBlacks.forEach(amColorBlack => {
+            amColorBlack.classList.add('colorBlack');
+        })
+        const amNavBackGroundColorBlacks = document.querySelectorAll('.amNavBackGroundColorBlack');
+        amNavBackGroundColorBlacks.forEach(amNavBackGroundColorBlack => {
+            amNavBackGroundColorBlack.classList.add('backGroundColorWhite');
+        })
+        const amBackGroundColorWhites = document.querySelectorAll('.amBackGroundColorWhite');
+        amBackGroundColorWhites.forEach(amBackGroundColorWhite => {
+            amBackGroundColorWhite.classList.add('backGroundColorWhite');
+        })
+        const amBackGroundColorBlacks = document.querySelectorAll('.amBackGroundColorBlack');
+        amBackGroundColorBlacks.forEach(amBackGroundColorBlack => {
+            amBackGroundColorBlack.classList.add('backGroundColorBlack');
+        })
+        if(home != null){
+            home.classList.add('amHome');
+        }
+        if(about != null){
+            about.classList.add('amAbout');
+        }
+        if(skill != null){
+            skill.classList.add('amSkill');
+        }
+        if(work != null){
+            work.classList.add('amWork');
+        }
+        if(contact != null){
+            contact.classList.add('amContact');
+        }
+    }
+})
+
+
+
+//カーソル
+document.addEventListener('mousemove', (e) => {
+    if (window.matchMedia('(min-width: 960px)').matches) {
+        firstCursor.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
+        secondCursor.animate(
+            {transform: ['translate(' + e.clientX + 'px, ' + e.clientY + 'px)']},
+            {delay: 100,duration: 1000,easing: 'ease',fill: 'forwards'}
+        )
+        thirdCursor.animate(
+            {transform: ['translate(' + e.clientX + 'px, ' + e.clientY + 'px)']},
+            {delay: 200,duration: 1000,easing: 'ease',fill: 'forwards'}
+        )
+    }
 })
 
 
@@ -350,68 +349,28 @@ window.addEventListener('load', () => {
 function navMouseenter(navEn,navJa,cursorSize,cursorHalfSize){
     //カーソル
     firstCursor.animate(
-        {
-            top: [cursorHalfSize],
-            left: [cursorHalfSize],
-            height: [cursorSize],
-            width: [cursorSize],
-            opacity: ['0.6'],
-            backgroundColor: ['#eba0a0']
-        }
-        ,
-        {
-            duration: 500,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {top: [cursorHalfSize],left: [cursorHalfSize],height: [cursorSize],width: [cursorSize],opacity: ['0.6'],backgroundColor: ['#eba0a0']},
+        {duration: 500,easing: 'ease',fill: 'forwards'}
     )
     secondCursor.animate(
-        {
-            opacity: ['0']
-        }
-        ,
-        {
-            duration: 500,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {opacity: ['0']},
+        {duration: 500,easing: 'ease',fill: 'forwards'}
     )
     thirdCursor.animate(
-        {
-            opacity: ['0']
-        }
-        ,
-        {
-            duration: 500,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {opacity: ['0']},
+        {duration: 500,easing: 'ease',fill: 'forwards'}
     )
     //ヘッダーナビゲーション文字切り替え
     if(navEn != null && navJa != null){
         //ナビゲーション文字（英語）
         navEn.animate(
-            {
-                opacity: ['0']
-            }
-            ,
-            {
-                duration: 500,
-                easing: 'ease',
-                fill: 'forwards'
-            }
+            {opacity: ['0']},
+            {duration: 500,easing: 'ease',fill: 'forwards'}
         )
         //ナビゲーション文字（日本語）
         navJa.animate(
-            {
-                opacity: ['1']
-            }
-            ,
-            {
-                duration: 500,
-                easing: 'ease',
-                fill: 'forwards'
-            }
+            {opacity: ['1']},
+            {duration: 500,easing: 'ease',fill: 'forwards'}
         )
     }
 }
@@ -453,69 +412,28 @@ if (window.matchMedia('(min-width: 960px)').matches) {
 function navMouseleave(navEn,navJa){
     //カーソル
     firstCursor.animate(
-        {
-            top: ['-10px'],
-            left: ['-10px'],
-            height: ['20px'],
-            width: ['20px'],
-            opacity: ['0.9'],
-            backgroundColor: ['#d4c520']
-            
-        }
-        ,
-        {
-            duration: 500,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {top: ['-10px'],left: ['-10px'],height: ['20px'],width: ['20px'],opacity: ['0.9'],backgroundColor: ['#d4c520'] },
+        {duration: 500,easing: 'ease',fill: 'forwards'}
     )
     secondCursor.animate(
-        {
-            opacity: ['1']
-        }
-        ,
-        {
-            duration: 500,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {opacity: ['1']},
+        {duration: 500,easing: 'ease',fill: 'forwards'}
     )
     thirdCursor.animate(
-        {
-            opacity: ['1']
-        }
-        ,
-        {
-            duration: 500,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {opacity: ['1']},
+        {duration: 500,easing: 'ease',fill: 'forwards'}
     )
     //ヘッダーナビゲーション文字切り替え
     if(navEn != null && navJa != null){
         //ナビゲーション文字（英語）
         navEn.animate(
-            {
-                opacity: ['1']
-            }
-            ,
-            {
-                duration: 500,
-                easing: 'ease',
-                fill: 'forwards'
-            }
+            {opacity: ['1']},
+            {duration: 500,easing: 'ease',fill: 'forwards'}
         )
         //ナビゲーション文字（日本語）
         navJa.animate(
-            {
-                opacity: ['0']
-            }
-            ,
-            {
-                duration: 500,
-                easing: 'ease',
-                fill: 'forwards'
-            }
+            {opacity: ['0']},
+            {duration: 500,easing: 'ease',fill: 'forwards'}
         )
     }
 }
@@ -562,111 +480,16 @@ navs.forEach(nav => {
             setTimeout ( TransitionDelay, 500 );
             //左ロード画面
             loadLeft.animate(
-                {
-                    width: ['51%'],
-                    borderBottomRightRadius: [0]
-                }
-                ,
-                {
-                    duration: 500,
-                    easing: 'ease',
-                    fill: 'forwards'
-                }
+                {width: ['51%'],borderBottomRightRadius: [0]},
+                {duration: 500,easing: 'ease',fill: 'forwards'}
             )
             // 右ロード画面
             loadRight.animate(
-                {
-                    width: ['51%'],
-                     borderBottomLeftRadius: [0]
-                }
-                ,
-                {
-                    duration: 500,
-                    easing: 'ease',
-                    fill: 'forwards'
-                }
+                {width: ['51%'],borderBottomLeftRadius: [0]},
+                {duration: 500,easing: 'ease',fill: 'forwards'}
             )
         }
     })
-})
-
-
-
-//モード切替
-window.addEventListener('load', () => {
-    //ダークモード
-    if(query == '?dark'){
-        toggleArea.classList.add("toggleAreaActive");
-        toggleSwitch.classList.add("toggleSwitchActive");
-        const pmColorWhites = document.querySelectorAll('.pmColorWhite');
-        pmColorWhites.forEach(pmColorWhite => {
-            pmColorWhite.classList.add('colorWhite');
-        });
-        const pmColorBlacks = document.querySelectorAll('.pmColorBlack');
-        pmColorBlacks.forEach(pmColorBlack => {
-            pmColorBlack.classList.add('colorBlack');
-        });
-        const amBackGroundColorWhites = document.querySelectorAll('.pmBackGroundColorWhite');
-        amBackGroundColorWhites.forEach(amBackGroundColorWhite => {
-            amBackGroundColorWhite.classList.add('backGroundColorWhite');
-        });
-        const amBackGroundColorBlacks = document.querySelectorAll('.pmBackGroundColorBlack');
-        amBackGroundColorBlacks.forEach(amBackGroundColorBlack => {
-            amBackGroundColorBlack.classList.add('backGroundColorBlack');
-        });
-        if(home != null){
-            home.classList.add('pmHome');
-        }
-        if(about != null){
-            about.classList.add('pmAbout');
-        }
-        if(skill != null){
-            skill.classList.add('pmSkill');
-        }
-        if(work != null){
-            work.classList.add('pmWork');
-        }
-        if(contact != null){
-            contact.classList.add('pmContact');
-        }
-    //ライトモード
-    }else{
-        const amColorWhites = document.querySelectorAll('.amColorWhite');
-        amColorWhites.forEach(amColorWhite => {
-            amColorWhite.classList.add('colorWhite');
-        });
-        const amColorBlacks = document.querySelectorAll('.amColorBlack');
-        amColorBlacks.forEach(amColorBlack => {
-            amColorBlack.classList.add('colorBlack');
-        });
-        const amNavBackGroundColorBlacks = document.querySelectorAll('.amNavBackGroundColorBlack');
-        amNavBackGroundColorBlacks.forEach(amNavBackGroundColorBlack => {
-            amNavBackGroundColorBlack.classList.add('backGroundColorWhite');
-        });
-        const amBackGroundColorWhites = document.querySelectorAll('.amBackGroundColorWhite');
-        amBackGroundColorWhites.forEach(amBackGroundColorWhite => {
-            amBackGroundColorWhite.classList.add('backGroundColorWhite');
-        });
-        const amBackGroundColorBlacks = document.querySelectorAll('.amBackGroundColorBlack');
-        amBackGroundColorBlacks.forEach(amBackGroundColorBlack => {
-            amBackGroundColorBlack.classList.add('backGroundColorBlack');
-        });
-        if(home != null){
-            home.classList.add('amHome');
-        }
-        if(about != null){
-            about.classList.add('amAbout');
-        }
-        if(skill != null){
-            skill.classList.add('amSkill');
-        }
-        if(work != null){
-            work.classList.add('amWork');
-        }
-        if(contact != null){
-            contact.classList.add('amContact');
-        }
-    }
 })
 
 
@@ -692,220 +515,76 @@ let countBefore = 0;
 let countAfter = 0;
 function slider(countBefore,countAfter,height){
     likingIcons[countBefore].animate(
-        {
-            transform: ['translateY(10px)']
-        }
-        ,
-        {
-            delay: 0,
-            duration: 100,
-            easing: 'linear',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(10px)']},
+        {delay: 0,duration: 100,easing: 'linear',fill: 'forwards'}
     )
     likingIcons[countBefore].animate(
-        {
-            transform: ['translateY(-20px)']
-        }
-        ,
-        {
-            delay: 100,
-            duration: 500,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(-20px)']},
+        {delay: 100,duration: 500,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countBefore].animate(
-        {
-            transform: ['translateY(' + height + ')']
-        }
-        ,
-        {
-            delay: 500,
-            duration: 500,
-            easing: 'ease-in',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(' + height + ')']},
+        {delay: 500,duration: 500,easing: 'ease-in',fill: 'forwards'}
     )
     likingTextAreas[countBefore].animate(
-        {
-            transform: ['translateY(10px)']
-        }
-        ,
-        {
-            delay: 100,
-            duration: 100,
-            easing: 'linear',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(10px)']},
+        {delay: 100,duration: 100,easing: 'linear',fill: 'forwards'}
     )
     likingTextAreas[countBefore].animate(
-        {
-            transform: ['translateY(-20px)']
-        }
-        ,
-        {
-            delay: 200,
-            duration: 500,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(-20px)']},
+        {delay: 200,duration: 500,easing: 'ease',fill: 'forwards'}
     )
     likingTextAreas[countBefore].animate(
-        {
-            transform: ['translateY(' + height + ')']
-        }
-        ,
-        {
-            delay: 600,
-            duration: 500,
-            easing: 'ease-in',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(' + height + ')']},
+        {delay: 600,duration: 500,easing: 'ease-in',fill: 'forwards'}
     )
     likings[countBefore].animate(
-        {
-            height: [0]
-        }
-        ,
-        {
-            delay: 1500,
-            duration: 1,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {height: [0]},
+        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countBefore].animate(
-        {
-            transform: ['translateY(0)']
-        }
-        ,
-        {
-            delay: 1500,
-            duration: 1,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(0)']},
+        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingTextAreas[countBefore].animate(
-        {
-            transform: ['translateY(0)']
-        }
-        ,
-        {
-            delay: 1500,
-            duration: 1,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(0)']},
+        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likings[countAfter].animate(
-        {
-            height: [height]
-        }
-        ,
-        {
-            delay: 1500,
-            duration: 1,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {height: [height]},
+        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countAfter].animate(
-        {
-            transform: ['translateY(' + height + ')']
-        }
-        ,
-        {
-            delay: 1500,
-            duration: 1,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(' + height + ')']},
+        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingTextAreas[countAfter].animate(
-        {
-            transform: ['translateY(' + height + ')']
-        }
-        ,
-        {
-            delay: 1500,
-            duration: 1,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(' + height + ')']},
+        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countAfter].animate(
-        {
-            transform: ['translateY(-20px)']
-        }
-        ,
-        {
-            delay: 1500,
-            duration: 500,
-            easing: 'ease-out',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(-20px)']},
+        {delay: 1500,duration: 500,easing: 'ease-out',fill: 'forwards'}
     )
     likingIcons[countAfter].animate(
-        {
-            transform: ['translateY(10px)']
-        }
-        ,
-        {
-            delay: 2000,
-            duration: 250,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(10px)']},
+        {delay: 2000,duration: 250,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countAfter].animate(
-        {
-            transform: ['translateY(0px)']
-        }
-        ,
-        {
-            delay: 2250,
-            duration: 100,
-            easing: 'ease-in',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(0px)']},
+        {delay: 2250,duration: 100,easing: 'ease-in',fill: 'forwards'}
     )
     likingTextAreas[countAfter].animate(
-        {
-            transform: ['translateY(-20px)']
-        }
-        ,
-        {
-            delay: 1600,
-            duration: 500,
-            easing: 'ease-out',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(-20px)']},
+        {delay: 1600,duration: 500,easing: 'ease-out',fill: 'forwards'}
     )
     likingTextAreas[countAfter].animate(
-        {
-            transform: ['translateY(10px)']
-        }
-        ,
-        {
-            delay: 2100,
-            duration: 250,
-            easing: 'ease',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(10px)']},
+        {delay: 2100,duration: 250,easing: 'ease',fill: 'forwards'}
     )
     likingTextAreas[countAfter].animate(
-        {
-            transform: ['translateY(0)']
-        }
-        ,
-        {
-            delay: 2350,
-            duration: 100,
-            easing: 'ease-in',
-            fill: 'forwards'
-        }
+        {transform: ['translateY(0)']},
+        {delay: 2350,duration: 100,easing: 'ease-in',fill: 'forwards'}
     )
 }
 function arrowClick(arrow){
@@ -946,68 +625,3 @@ if(arrowRight != null){
         arrowClick("arrowRight");
     })
 }
-
-
-
-// //雲
-// function cloud(cloudCount){
-//     for (let i = 0; i <= cloudCount; i++) {
-//         const random = Math.random()*100;
-//         const cloud = document.createElement("span");
-//         cloud.className = "cloud";
-//         cloud.style.display = 'block';
-//         cloud.innerHTML = '<span>☁</span>';
-//         const minSize = 50; // 雲の最小サイズ
-//         const maxSize = 300; // 雲の最大サイズ
-//         const size = Math.random() * (maxSize - minSize) + minSize;
-//         cloud.style.width = `${size}px`;
-//         cloud.style.height = `${size}px`;
-//         cloud.style.fontSize = `${size}px`;
-//         cloud.style.left = `${Math.random()*100}%`;
-//         cloud.style.top = `${Math.random()*100}%`;
-//         cloud.style.animationDelay = `${Math.random() * 10}s`;
-//         clouds.appendChild(cloud);
-//     }
-// }
-// //雲の数（レスポンシブ対応）
-// window.addEventListener('load', () => {
-//     if (window.matchMedia('(max-width: 480px)').matches) {
-//         cloud('20')
-//     } else if (window.matchMedia('(max-width:959px)').matches) {
-//         cloud('30')
-//     }else{
-//         cloud('50')
-//     }
-// })
-
-
-
-// //シャボン玉
-// function soap(soapCount){
-//     for (let i = 0; i <= soapCount; i++) {
-//         const random = Math.random()*100;
-//         const soap = document.createElement("span");
-//         soap.className = "soap";
-//         soap.style.display = 'block';
-//         const minSize = 50;
-//         const maxSize = 150;
-//         const size = Math.random() * (maxSize - minSize) + minSize;
-//         soap.style.width = `${size}px`;
-//         soap.style.height = `${size}px`;
-//         soap.style.left = `${Math.random()*100}%`;
-//         soap.style.top = `${Math.random()*100}%`;
-//         soap.style.animationDelay = `${Math.random() * 10}s`;
-//         soap.style.opacity = '0';
-//         soaps.appendChild(soap);
-//     }
-// }
-// //シャボン玉の数（レスポンシブ対応）
-// window.addEventListener('load', () => {
-//     if (window.matchMedia('(max-width: 480px)').matches) {
-//         soap('20')
-//     } else if (window.matchMedia('(max-width:959px)').matches) {
-//         soap('30')
-//     }else{
-//         soap('50')
-//     }
-// })
