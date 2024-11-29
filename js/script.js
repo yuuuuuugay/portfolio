@@ -106,13 +106,6 @@ const html = document.querySelector('html');
 
 
 
-//雲
-const clouds = document.querySelector('#clouds');
-//シャボン玉
-const soaps = document.querySelector('#soaps');
-
-
-
 //ロード
 window.addEventListener('load' , (e) => {
     //ロード文字
@@ -162,18 +155,7 @@ window.addEventListener('load' , (e) => {
 
     //ワーク詳細画面時
     let workDetailLink =window.location.href;
-    if(workDetailLink.indexOf('/?') !== -1){
-        workDetailLink = workDetailLink.substr(0, workDetailLink.indexOf('/?'));
-    }
-    if(workDetailLink.indexOf('work') !== -1){
-        workDetailLink = workDetailLink.substr(workDetailLink.indexOf('work') + 5);
-        if(workDetailLink.length === 0){
-            workDetailLink = null;
-        }
-    }else{
-        workDetailLink = null;
-    }
-    if(workDetailLink !== null){
+    if(workDetailLink.indexOf('Detail') !== -1){
         html.style.cursor = 'auto';
         navs.forEach(nav => {
             nav.style.cursor = 'pointer';
@@ -192,9 +174,7 @@ window.addEventListener('load' , (e) => {
 
 
 
-    //背景アニメーション関数
-    
-    //星
+    //星アニメーション
     if(stars != null){
         for (let i = 0; i <= 400; i++) {
             const random = Math.random()*100;
@@ -231,7 +211,7 @@ window.addEventListener('load' , (e) => {
             }
         }
     }
-    //雪
+    //雪アニメーション
     if(contact != null){
         for (let i = 0; i <= 200; i++) {
             const random = Math.random()*100;
@@ -374,37 +354,6 @@ function navMouseenter(navEn,navJa,cursorSize,cursorHalfSize){
         )
     }
 }
-if (window.matchMedia('(min-width: 960px)').matches) {
-    navs.forEach(nav => {
-        nav.addEventListener('mouseenter', () => {
-            //ホームナビゲーションホバー時
-            if(nav.id == "navHome"){
-                navMouseenter(navHomeEn,navHomeJa,'50px','-25px');
-            //プロフィールナビゲーションホバー時
-            }else if(nav.id == "navAbout"){
-                navMouseenter(navAboutEn,navAboutJa,'50px','-25px');
-            //スキルナビゲーションホバー時
-            }else if(nav.id == "navSkill"){
-                navMouseenter(navSkillEn,navSkillJa,'50px','-25px');
-            //ワークナビゲーションホバー時
-            }else if(nav.id == "navWork"){
-                navMouseenter(navSOthersEn,navWorkJa,'50px','-25px');
-            //コンタクトナビゲーションホバー時
-            }else if(nav.id == "navContact"){
-                navMouseenter(navContactEn,navContactJa,'50px','-25px');
-            //トグルホバー時
-            }else if(nav.id == "toggleArea"){
-                navMouseenter(null,null,'40px','-20px');
-            //ワーク詳細画面リンクホバー時
-            }else if(nav.id == "externalLink"){
-                
-            //その他のaタグホバー時
-            }else{
-                navMouseenter(null,null,'80px','-40px');
-            }
-        })
-    })
-}
 
 
 
@@ -439,6 +388,33 @@ function navMouseleave(navEn,navJa){
 }
 if (window.matchMedia('(min-width: 960px)').matches) {
     navs.forEach(nav => {
+        nav.addEventListener('mouseenter', () => {
+            //ホームナビゲーションホバー時
+            if(nav.id == "navHome"){
+                navMouseenter(navHomeEn,navHomeJa,'50px','-25px');
+            //プロフィールナビゲーションホバー時
+            }else if(nav.id == "navAbout"){
+                navMouseenter(navAboutEn,navAboutJa,'50px','-25px');
+            //スキルナビゲーションホバー時
+            }else if(nav.id == "navSkill"){
+                navMouseenter(navSkillEn,navSkillJa,'50px','-25px');
+            //ワークナビゲーションホバー時
+            }else if(nav.id == "navWork"){
+                navMouseenter(navSOthersEn,navWorkJa,'50px','-25px');
+            //コンタクトナビゲーションホバー時
+            }else if(nav.id == "navContact"){
+                navMouseenter(navContactEn,navContactJa,'50px','-25px');
+            //トグルホバー時
+            }else if(nav.id == "toggleArea"){
+                navMouseenter(null,null,'40px','-20px');
+            //ワーク詳細画面リンクホバー時
+            }else if(nav.id == "externalLink"){
+                
+            //その他のaタグホバー時
+            }else{
+                navMouseenter(null,null,'80px','-40px');
+            }
+        })
         nav.addEventListener('mouseleave', () => {
             //ホームナビゲーションホバー解除時
             if(nav.id == "navHome"){
@@ -463,34 +439,29 @@ if (window.matchMedia('(min-width: 960px)').matches) {
                 navMouseleave(null,null);
             }
         })
+        //画面切り替え
+        nav.addEventListener('click', (e) => {
+            if(nav.id != "mail" && nav.id != 'externalLink'){
+                e.preventDefault();
+                var TransitionDelay = function(){
+                    window.location.href = nav.href + query;
+                }
+                // 0.5秒後遷移
+                setTimeout ( TransitionDelay, 500 );
+                //左ロード画面
+                loadLeft.animate(
+                    {width: ['51%'],borderBottomRightRadius: [0]},
+                    {duration: 500,easing: 'ease',fill: 'forwards'}
+                )
+                // 右ロード画面
+                loadRight.animate(
+                    {width: ['51%'],borderBottomLeftRadius: [0]},
+                    {duration: 500,easing: 'ease',fill: 'forwards'}
+                )
+            }
+        })
     })
 }
-
-
-
-//画面切り替え
-navs.forEach(nav => {
-    nav.addEventListener('click', (e) => {
-        if(nav.id != "mail" && nav.id != 'externalLink'){
-            e.preventDefault();
-            var TransitionDelay = function(){
-                window.location.href = nav.href + query;
-            }
-            // 0.5秒後遷移
-            setTimeout ( TransitionDelay, 500 );
-            //左ロード画面
-            loadLeft.animate(
-                {width: ['51%'],borderBottomRightRadius: [0]},
-                {duration: 500,easing: 'ease',fill: 'forwards'}
-            )
-            // 右ロード画面
-            loadRight.animate(
-                {width: ['51%'],borderBottomLeftRadius: [0]},
-                {duration: 500,easing: 'ease',fill: 'forwards'}
-            )
-        }
-    })
-})
 
 
 
