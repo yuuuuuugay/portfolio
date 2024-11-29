@@ -499,7 +499,7 @@ function slider(countBefore,countAfter,height){
     )
     likingIcons[countBefore].animate(
         {transform: ['translateY(' + height + ')']},
-        {delay: 500,duration: 500,easing: 'ease-in',fill: 'forwards'}
+        {delay: 400,duration: 300,easing: 'ease-in',fill: 'forwards'}
     )
     likingTextAreas[countBefore].animate(
         {transform: ['translateY(10px)']},
@@ -511,55 +511,55 @@ function slider(countBefore,countAfter,height){
     )
     likingTextAreas[countBefore].animate(
         {transform: ['translateY(' + height + ')']},
-        {delay: 600,duration: 500,easing: 'ease-in',fill: 'forwards'}
+        {delay: 500,duration: 300,easing: 'ease-in',fill: 'forwards'}
     )
     likings[countBefore].animate(
         {height: [0]},
-        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
+        {delay: 800,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countBefore].animate(
         {transform: ['translateY(0)']},
-        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
+        {delay: 800,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingTextAreas[countBefore].animate(
         {transform: ['translateY(0)']},
-        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
+        {delay: 800,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likings[countAfter].animate(
         {height: [height]},
-        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
+        {delay: 800,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countAfter].animate(
         {transform: ['translateY(' + height + ')']},
-        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
+        {delay: 800,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingTextAreas[countAfter].animate(
         {transform: ['translateY(' + height + ')']},
-        {delay: 1500,duration: 1,easing: 'ease',fill: 'forwards'}
+        {delay: 800,duration: 1,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countAfter].animate(
         {transform: ['translateY(-20px)']},
-        {delay: 1500,duration: 500,easing: 'ease-out',fill: 'forwards'}
+        {delay: 1000,duration: 300,easing: 'ease-out',fill: 'forwards'}
     )
     likingIcons[countAfter].animate(
         {transform: ['translateY(10px)']},
-        {delay: 2000,duration: 250,easing: 'ease',fill: 'forwards'}
+        {delay: 1300,duration: 250,easing: 'ease',fill: 'forwards'}
     )
     likingIcons[countAfter].animate(
         {transform: ['translateY(0px)']},
-        {delay: 2250,duration: 100,easing: 'ease-in',fill: 'forwards'}
+        {delay: 1550,duration: 100,easing: 'ease-in',fill: 'forwards'}
     )
     likingTextAreas[countAfter].animate(
         {transform: ['translateY(-20px)']},
-        {delay: 1600,duration: 500,easing: 'ease-out',fill: 'forwards'}
+        {delay: 1100,duration: 300,easing: 'ease-out',fill: 'forwards'}
     )
     likingTextAreas[countAfter].animate(
         {transform: ['translateY(10px)']},
-        {delay: 2100,duration: 250,easing: 'ease',fill: 'forwards'}
+        {delay: 1400,duration: 250,easing: 'ease',fill: 'forwards'}
     )
     likingTextAreas[countAfter].animate(
         {transform: ['translateY(0)']},
-        {delay: 2350,duration: 100,easing: 'ease-in',fill: 'forwards'}
+        {delay: 1650,duration: 100,easing: 'ease-in',fill: 'forwards'}
     )
 }
 function arrowClick(arrow){
