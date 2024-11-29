@@ -386,8 +386,10 @@ function navMouseleave(navEn,navJa){
         )
     }
 }
-if (window.matchMedia('(min-width: 960px)').matches) {
-    navs.forEach(nav => {
+
+navs.forEach(nav => {
+    if (window.matchMedia('(min-width: 960px)').matches) {
+        //ナビゲーションホバー
         nav.addEventListener('mouseenter', () => {
             //ホームナビゲーションホバー時
             if(nav.id == "navHome"){
@@ -415,6 +417,7 @@ if (window.matchMedia('(min-width: 960px)').matches) {
                 navMouseenter(null,null,'80px','-40px');
             }
         })
+        //ナビゲーションホバー解除
         nav.addEventListener('mouseleave', () => {
             //ホームナビゲーションホバー解除時
             if(nav.id == "navHome"){
@@ -439,29 +442,30 @@ if (window.matchMedia('(min-width: 960px)').matches) {
                 navMouseleave(null,null);
             }
         })
-        //画面切り替え
-        nav.addEventListener('click', (e) => {
-            if(nav.id != "mail" && nav.id != 'externalLink'){
-                e.preventDefault();
-                var TransitionDelay = function(){
-                    window.location.href = nav.href + query;
-                }
-                // 0.5秒後遷移
-                setTimeout ( TransitionDelay, 500 );
-                //左ロード画面
-                loadLeft.animate(
-                    {width: ['51%'],borderBottomRightRadius: [0]},
-                    {duration: 500,easing: 'ease',fill: 'forwards'}
-                )
-                // 右ロード画面
-                loadRight.animate(
-                    {width: ['51%'],borderBottomLeftRadius: [0]},
-                    {duration: 500,easing: 'ease',fill: 'forwards'}
-                )
+    }
+    //画面切り替え
+    nav.addEventListener('click', (e) => {
+        if(nav.id != "mail" && nav.id != 'externalLink'){
+            e.preventDefault();
+            var TransitionDelay = function(){
+                window.location.href = nav.href + query;
             }
-        })
+            // 0.5秒後遷移
+            setTimeout ( TransitionDelay, 500 );
+            //左ロード画面
+            loadLeft.animate(
+                {width: ['51%'],borderBottomRightRadius: [0]},
+                {duration: 500,easing: 'ease',fill: 'forwards'}
+            )
+            // 右ロード画面
+            loadRight.animate(
+                {width: ['51%'],borderBottomLeftRadius: [0]},
+                {duration: 500,easing: 'ease',fill: 'forwards'}
+            )
+        }
     })
-}
+})
+
 
 
 
